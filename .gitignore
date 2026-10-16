@@ -1,0 +1,6 @@
+﻿node_modules/
+_workshop_data/
+*.py
+*.json
+*.vtt
+*.txt.bak

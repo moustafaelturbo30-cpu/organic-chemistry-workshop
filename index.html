@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة ورشتي نصف منهج الكيمياء العضوية — بنك الأسئلة والشروحات المنظومة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #090d16;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(15, 23, 42, 0.85);
+            --bg-card-hover: #1e293b;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-highlight: #10b981;
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-emerald: #10b981;
+            --accent-cyan: #06b6d4;
+            --accent-indigo: #6366f1;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --glow-color: rgba(16, 185, 129, 0.15);
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.5);
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-card-hover: #f1f5f9;
+            --border-color: #e2e8f0;
+            --border-highlight: #059669;
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-emerald: #059669;
+            --accent-cyan: #0284c7;
+            --accent-indigo: #4f46e5;
+            --accent-amber: #d97706;
+            --accent-rose: #e11d48;
+            --glow-color: rgba(5, 150, 105, 0.1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 20px -5px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* SVG Icon Utilities */
+        .icon-svg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Top Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            background: rgba(9, 13, 22, 0.9);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        [data-theme="light"] header {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .brand-vector {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2));
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-emerald);
+        }
+
+        .brand-headings h1 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .brand-headings p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-action-icon {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-action-icon:hover {
+            border-color: var(--accent-emerald);
+            color: var(--accent-emerald);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--glow-color);
+        }
+
+        /* Top Navigation Tabs */
+        nav.nav-bar {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 8px 20px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        nav.nav-bar::-webkit-scrollbar { display: none; }
+
+        .tab-item {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-item:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .tab-item.active {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(6, 182, 212, 0.12));
+            border-color: var(--accent-emerald);
+            color: var(--accent-emerald);
+            box-shadow: 0 2px 8px var(--glow-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1280px;
+            margin: 24px auto 60px;
+            padding: 0 20px;
+        }
+
+        /* Hero Banner */
+        .hero-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin-bottom: 24px;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .clean-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .badge-emerald {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--accent-emerald);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-cyan {
+            background: rgba(6, 182, 212, 0.12);
+            color: var(--accent-cyan);
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+
+        .badge-indigo {
+            background: rgba(99, 102, 241, 0.12);
+            color: var(--accent-indigo);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .badge-amber {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--accent-amber);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .hero-panel h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            line-height: 1.35;
+        }
+
+        .hero-panel p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .stat-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .stat-val {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--accent-emerald);
+            line-height: 1;
+        }
+
+        .stat-lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Vector Diagrams Gallery (Pure SVG) */
+        .diagrams-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .diagram-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .diagram-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .diagram-svg-container {
+            width: 100%;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+        [data-theme="light"] .diagram-svg-container {
+            background: #f1f5f9;
+        }
+
+        /* Controls Section */
+        .search-filter-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-field-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-field-wrapper input {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px 44px 12px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.92rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-field-wrapper input:focus {
+            border-color: var(--accent-emerald);
+            box-shadow: 0 0 15px var(--glow-color);
+        }
+
+        .search-icon-pos {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-tag {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-tag:hover {
+            border-color: var(--accent-cyan);
+            color: var(--text-main);
+        }
+
+        .filter-tag.active {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: #000;
+            font-weight: 700;
+        }
+
+        .sub-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .custom-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .custom-toggle input {
+            display: none;
+        }
+
+        .toggle-track {
+            width: 40px;
+            height: 22px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .toggle-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            right: 3px;
+            transition: var(--transition);
+        }
+
+        .custom-toggle input:checked + .toggle-track {
+            background: var(--accent-emerald);
+            border-color: var(--accent-emerald);
+        }
+
+        .custom-toggle input:checked + .toggle-track .toggle-thumb {
+            right: 19px;
+            background: #ffffff;
+        }
+
+        .toggle-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* Question Cards */
+        .cards-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .q-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .q-card:hover {
+            border-color: rgba(16, 185, 129, 0.35);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .q-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .q-meta-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .q-seq {
+            font-weight: 900;
+            font-size: 1.05rem;
+            color: var(--accent-emerald);
+        }
+
+        .q-body {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.65;
+            color: var(--text-main);
+            margin-bottom: 18px;
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        @media (min-width: 768px) {
+            .options-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .option-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .option-indicator {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .option-box.correct-selected {
+            border-color: var(--accent-emerald);
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--accent-emerald);
+            font-weight: 700;
+        }
+
+        .option-box.correct-selected .option-indicator {
+            border-color: var(--accent-emerald);
+            background: var(--accent-emerald);
+            color: #ffffff;
+        }
+
+        /* Callout Boxes */
+        .teacher-callout {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(6, 182, 212, 0.04));
+            border-right: 4px solid var(--accent-emerald);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            margin-top: 14px;
+        }
+
+        .callout-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--accent-emerald);
+            margin-bottom: 6px;
+        }
+
+        .callout-body {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .trick-callout {
+            background: rgba(245, 158, 11, 0.08);
+            border-right: 4px solid var(--accent-amber);
+            border-radius: var(--radius-md);
+            padding: 12px 18px;
+            margin-top: 10px;
+        }
+
+        .trick-callout-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--accent-amber);
+            margin-bottom: 4px;
+        }
+
+        .trick-callout-body {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+        }
+
+        .q-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .btn-action-sm {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-action-sm:hover {
+            border-color: var(--accent-emerald);
+            color: var(--text-main);
+        }
+
+        /* Rules Layout */
+        .rules-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .rule-item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .rule-item-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+
+        .rule-code-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            direction: ltr;
+            text-align: left;
+            white-space: pre-wrap;
+        }
+        [data-theme="light"] .rule-code-box {
+            background: #f1f5f9;
+        }
+
+        /* Flashcards 3D View */
+        .flashcard-wrapper {
+            max-width: 640px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .flip-stage {
+            perspective: 1000px;
+            height: 330px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .flip-flipper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: var(--radius-lg);
+        }
+
+        .flip-flipper.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            box-shadow: var(--shadow-md);
+        }
+
+        .flip-face-front {
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .flip-face-back {
+            transform: rotateY(180deg);
+            border-color: rgba(6, 182, 212, 0.4);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(6, 182, 212, 0.1));
+        }
+
+        .flip-question-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            line-height: 1.5;
+            color: var(--text-main);
+            margin-bottom: 14px;
+        }
+
+        .flip-prompt {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .flip-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn-nav-arrow {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: var(--radius-md);
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-nav-arrow:hover {
+            border-color: var(--accent-emerald);
+            background: rgba(16, 185, 129, 0.08);
+        }
+
+        /* Print Media Styles */
+        @media print {
+            header, nav, .search-filter-section, .q-footer, .flashcard-wrapper, .header-buttons, .diagrams-gallery {
+                display: none !important;
+            }
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .q-card {
+                border: 1px solid #d1d5db !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+                margin-bottom: 24px;
+            }
+            .teacher-callout, .trick-callout {
+                background: #f8fafc !important;
+                color: #000000 !important;
+                border-right: 3px solid #000000 !important;
+            }
+            .option-box.correct-selected {
+                background: #e6fffa !important;
+                color: #000000 !important;
+                border-color: #059669 !important;
+                font-weight: bold !important;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="brand-logo">
+                <div class="brand-vector">
+                    <svg class="icon-svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M10 2v7.31L4.2 18.15A2 2 0 0 0 5.89 21h12.22a2 2 0 0 0 1.69-2.85L14 9.31V2"/>
+                        <line x1="8.5" y1="2" x2="15.5" y2="2"/>
+                        <line x1="7" y1="14" x2="17" y2="14"/>
+                    </svg>
+                </div>
+                <div class="brand-headings">
+                    <h1>منصة ورشتي نصف منهج الكيمياء العضوية</h1>
+                    <p>الصف الثالث الثانوي — تفريغ وحلول وشروحات الامتحانات الوزارية 2021 - 2024</p>
+                </div>
+            </a>
+            <div class="header-buttons">
+                <button class="btn-action-icon" id="themeToggleBtn" title="تبديل النمط الليلي والنهاري">
+                    <svg class="icon-svg" id="themeIcon" width="20" height="20" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="btn-action-icon" id="printPageBtn" title="طباعة أو تصدير PDF">
+                    <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24">
+                        <polyline points="6 9 6 2 18 2 18 9"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                        <rect x="6" y="14" width="12" height="8"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-bar" id="mainNav">
+            <button class="tab-item active" data-tab="all-q">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                جميع الأسئلة والحلول (<span id="totalCountBadge">0</span>)
+            </button>
+            <button class="tab-item" data-tab="w1-q">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+                </svg>
+                ورشة الحل الأولى (الألكانات والأساسيات)
+            </button>
+            <button class="tab-item" data-tab="w2-q">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="8" y1="12" x2="16" y2="12"/>
+                    <line x1="8" y1="9" x2="16" y2="9"/>
+                </svg>
+                ورشة الحل الثانية (الألكينات والألكاينات)
+            </button>
+            <button class="tab-item" data-tab="rules-view">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                دستور القوانين الذهبية
+            </button>
+            <button class="tab-item" data-tab="flashcards-view">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+                كروت المراجعة الذكية
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-panel">
+            <div class="badge-list">
+                <span class="clean-badge badge-emerald">الصف الثالث الثانوي</span>
+                <span class="clean-badge badge-cyan">تفريغ 3.5 ساعات شرح</span>
+                <span class="clean-badge badge-indigo">أسلوب وطريقة حل الأستاذ</span>
+                <span class="clean-badge badge-amber">تنبيهات وتريكات الامتحان</span>
+            </div>
+            <h2>ملخص ورشتي حل نصف منهج الكيمياء العضوية</h2>
+            <p>
+                تم تجميع وتصنيف كافة الأسئلة الوزارية والتجريبية من ورشة الحل الأولى وورشة الحل الثانية، مع القوانين الحسابية السريعة ("الحل بالعين"، "نهايتك هي بدايتك"، "قاعدة ماركونيكوف الحصرية")، وتنبيهات الأستاذ للأفخاخ الشائعة في الامتحانات.
+            </p>
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-val" id="statQuestionsDisplay">31+</div>
+                    <div class="stat-lbl">سؤال وزاري محلول بالتفصيل</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">12</div>
+                    <div class="stat-lbl">قانوناً سحرياً للحل السريع</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">100%</div>
+                    <div class="stat-lbl">خالٍ تماماً من التشتت وبدون إنترنت</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drawn Vector Diagrams (SVG) -->
+        <section class="diagrams-gallery">
+            <!-- Diagram 1: Markovnikov Mechanism -->
+            <div class="diagram-card">
+                <div class="diagram-title">
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    آلية قاعدة ماركونيكوف (إضافة HBr للبروبين)
+                </div>
+                <div class="diagram-svg-container">
+                    <svg width="100%" height="100%" viewBox="0 0 340 120">
+                        <text x="20" y="45" font-family="monospace" font-size="14" fill="#06b6d4" font-weight="bold">CH3-CH=CH2</text>
+                        <text x="125" y="45" font-family="monospace" font-size="14" fill="#f59e0b" font-weight="bold">+ H-Br</text>
+                        <path d="M 180 40 L 220 40" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="230" y="45" font-family="monospace" font-size="14" fill="#10b981" font-weight="bold">CH3-CH(Br)-CH3</text>
+                        <!-- Explanation label -->
+                        <text x="50" y="90" font-family="sans-serif" font-size="11" fill="#94a3b8">H+ يذهب للطرفية (الأكثر هيدروجيناً)</text>
+                        <text x="200" y="90" font-family="sans-serif" font-size="11" fill="#10b981" font-weight="bold">2-برومو بروبان (الناتج الرئيسي)</text>
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Diagram 2: Baeyer Reaction -->
+            <div class="diagram-card">
+                <div class="diagram-title">
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    تفاعل باير (أكسدة وإضافة الإيثين)
+                </div>
+                <div class="diagram-svg-container">
+                    <svg width="100%" height="100%" viewBox="0 0 340 120">
+                        <text x="15" y="45" font-family="monospace" font-size="14" fill="#06b6d4" font-weight="bold">CH2=CH2</text>
+                        <text x="95" y="45" font-family="monospace" font-size="12" fill="#a855f7" font-weight="bold">+ [O] + H2O</text>
+                        <path d="M 180 40 L 215 40" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="225" y="45" font-family="monospace" font-size="13" fill="#10b981" font-weight="bold">CH2(OH)-CH2(OH)</text>
+                        <text x="40" y="85" font-family="sans-serif" font-size="11" fill="#a855f7">برمنجانات بوتاسيوم قلوية</text>
+                        <text x="220" y="85" font-family="sans-serif" font-size="11" fill="#10b981">إيثيلين جلايكول (مانع تجمد)</text>
+                        <text x="220" y="105" font-family="sans-serif" font-size="10" fill="#f59e0b">يزول اللون البنفسجي</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Diagram 3: Addition Polymerization -->
+            <div class="diagram-card">
+                <div class="diagram-title">
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    بلمرة البروبين (رسم مقطع البوليمر بالعين)
+                </div>
+                <div class="diagram-svg-container">
+                    <svg width="100%" height="100%" viewBox="0 0 340 120">
+                        <text x="10" y="45" font-family="monospace" font-size="13" fill="#06b6d4" font-weight="bold">n (CH2=CH-CH3)</text>
+                        <path d="M 140 40 L 175 40" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="185" y="45" font-family="monospace" font-size="13" fill="#10b981" font-weight="bold">-[-CH2-CH(CH3)-]n-</text>
+                        <text x="30" y="90" font-family="sans-serif" font-size="11" fill="#94a3b8">مونومر البروبين</text>
+                        <text x="195" y="90" font-family="sans-serif" font-size="11" fill="#10b981">بولي بروبيلين PP (سجاد وشكائر)</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls: Search & Filters -->
+        <section class="search-filter-section" id="controlsPanel">
+            <div class="search-field-wrapper">
+                <span class="search-icon-pos">
+                    <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </span>
+                <input type="text" id="filterSearchInput" placeholder="ابحث في الأسئلة والقوانين (مثل: ماركونيكوف، باير، كتلة مولية، بلمرة، بنتان، تكسير)...">
+            </div>
+
+            <div class="chips-container" id="chipsWrapper">
+                <span class="filter-tag active" data-filter="all">عرض الكل</span>
+                <span class="filter-tag" data-filter="ماركونيكوف">قاعدة ماركونيكوف</span>
+                <span class="filter-tag" data-filter="تسمية">تسمية IUPAC</span>
+                <span class="filter-tag" data-filter="ألكانات">ألكانات</span>
+                <span class="filter-tag" data-filter="ألكينات">ألكينات</span>
+                <span class="filter-tag" data-filter="ألكاينات">ألكاينات</span>
+                <span class="filter-tag" data-filter="كتلة مولية">الكتلة المولية</span>
+                <span class="filter-tag" data-filter="باير">تفاعل باير</span>
+                <span class="filter-tag" data-filter="تكسير">التكسير الحراري</span>
+            </div>
+
+            <div class="sub-bar">
+                <label class="custom-toggle">
+                    <input type="checkbox" id="testModeCheckbox">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                    <span class="toggle-label">وضع الاختبار (إخفاء الإجابات والشرح لتجرب تحل بنفسك)</span>
+                </label>
+                <span style="font-size: 0.85rem; color: var(--text-muted);" id="matchedQuestionsCount">عرض جميع الأسئلة</span>
+            </div>
+        </section>
+
+        <!-- Questions View -->
+        <div id="questionsView" class="cards-column">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Rules View -->
+        <div id="rulesView" class="rules-layout" style="display: none;">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Flashcards View -->
+        <div id="flashcardsView" class="flashcard-wrapper" style="display: none;">
+            <div class="flip-stage" id="flipStage">
+                <div class="flip-flipper" id="flipCard">
+                    <div class="flip-face flip-face-front">
+                        <span class="clean-badge badge-emerald" style="margin-bottom: 16px;">سؤال / قانون كيميائي</span>
+                        <div class="flip-question-text" id="fcQuestion">اضغط على الكارت لقلبه وقراءة الحل وطريقة الأستاذ</div>
+                        <div class="flip-prompt">انقر في أي مكان لقلب الكارت</div>
+                    </div>
+                    <div class="flip-face flip-face-back">
+                        <span class="clean-badge badge-cyan" style="margin-bottom: 16px;">الإجابة النموذجية وطريقة الحل</span>
+                        <div class="flip-question-text" id="fcAnswer" style="font-size: 1rem; font-weight: 600; white-space: pre-wrap;">-</div>
+                        <div class="flip-prompt">انقر للعودة للسؤال</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-controls">
+                <button class="btn-nav-arrow" id="fcPrev">
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                    السابق
+                </button>
+                <span id="fcCounter" style="font-weight: 700; font-size: 0.9rem; color: var(--text-secondary);">1 / 12</span>
+                <button class="btn-nav-arrow" id="fcNext">
+                    التالي
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const rulesDb = [{"id": "law_01", "title": "حساب عدد ذرات الكربون (n) والصيغة الجزيئية من الكتلة المولية بالعين", "category": "قوانين الحساب السريع", "law": "• للألكان (CnH2n+2): n = (M - 2) / 14\n• للألكين أو الألكان الحلقي (CnH2n): n = M / 14\n• للألكاين (CnH2n-2): n = (M + 2) / 14", "desc": "حيث M هي الكتلة المولية للمركب (بوحدة g/mol). يعتمد الاستنتاج على أن كتلة الكربون = 12، والهيدروجين = 1، وبالتالي كتلة وحدة (CH2) المتكررة تساوي 14 g/mol دائماً.", "example": "ألكان كتلته المولية 86 g/mol: n = (86 - 2) / 14 = 84 / 14 = 6. إذن الصيغة الجزيئية هي C6H14 (الهكسان)، وله 5 أيزوميرات.", "quote": "وفر وقتك في الامتحان: إذا أعطاك الكتلة المولية لألكان، اطرح 2 واقسم مباشرة على 14 لتحصل على عدد ذرات الكربون فوراً دون كتابة معادلات طويلة."}, {"id": "law_02", "title": "قاعدة ماركونيكوف الحصرية وشروط تطبيقها الصارمة", "category": "الألكينات والألكاينات", "law": "عند إضافة كاشف غير متماثل (H-X) إلى ألكين أو ألكاين غير متماثل -> يضاف أيون الهيدروجين الموجب (H+) إلى ذرة الكربون غير المشبعة المرتبطة بأكبر عدد من ذرات الهيدروجين، بينما يضاف الشق السالب (X-) إلى ذرة الكربون غير المشبعة المرتبطة بأقل عدد من ذرات الهيدروجين.", "desc": "شروط التطبيق الإلزامية: 1) كاشف غير متماثل (مثل HBr, HCl, H2O, H-OSO3H). 2) هيدروكربون غير مشبع غير متماثل (ذرتي كربون الرابطة غير المشبعة تحملان أعداداً غير متساوية من ذرات H).\nحالات استثناء لا تطبق فيها القاعدة: إذا كان الكاشف متماثلاً (مثل Br2, Cl2, H2) حتى لو كان الألكين غير متماثل، أو إذا كان الألكين متماثلاً (مثل الإيثين، أو 2-بيوتين).", "example": "إضافة HBr إلى البروبين (CH3-CH=CH2) ينتج حصراً 2-برومو بروبان (مركب رئيسي) ولا ينتج 1-برومو بروبان.", "quote": "حدد موقع الرابطة الثنائية: الهيدروجين يذهب إلى ذرة الكربون الغنية بالهيدروجين (الاتش تروح للريتش)، بينما يتجه الهالوجين السالب إلى ذرة الكربون الأفقر بالهيدروجين."}, {"id": "law_03", "title": "أولوية كسر الروابط عند الهدرجة (الرابطة الثلاثية أولاً)", "category": "الألكاينات والألكينات", "law": "إذا احتوى المركب العضوي على رابطة ثلاثية ورابطة ثنائية معاً وأضيفت كمية محددة من الهيدروجين -> يتم التفاعل والتشبع مع الرابطة الثلاثية أولاً!", "desc": "الرابطة الثلاثية تحتوي على رابطتي باي (π) ضعيفتين ذات كثافة إلكترونية ونشاط كيميائي أعلى مقارنة بالرابطة المزدوجة، لذا تستهلك أول 2 مول من غاز H2 للتحول إلى رابطة أحادية مشبعة قبل أن تتفاعل الرابطة المزدوجة.", "example": "المركب CH2=CH-C≡CH عند تفاعله مع 2 مول H2 ثم 1 مول Cl2: يكسر الهيدروجين الرابطة الثلاثية بالكامل، ثم يكسر الكلور الرابطة الثنائية ليعطي 1،2-ثنائي كلورو بيوتان.", "quote": "إذا اجتمع في نفس المركب رابطة ثلاثية ورابطة ثنائية، تكون الأولوية دائماً لكسر الرابطة الثلاثية حتى تتشبع بالكامل."}, {"id": "law_04", "title": "القوانين السريعة لحساب روابط سيجما (σ) وباي (π) وإلكترونات باي", "category": "قوانين الحساب السريع", "law": "• عدد روابط سيجما في أي هيدروكربون أليفاتي مفتوح السلسلة = (مجموع ذرات C + H) - 1\n• روابط سيجما الكلية في الألكان فقط = 3n + 1\n• روابط سيجما بين ذرات الكربون فقط في السلسلة المفتوحة = n - 1\n• روابط سيجما الكلية في الألكان الحلقي = 3n\n• كل رابطة باي (π) = زوج إلكترونات = 2 إلكترون باي", "desc": "تساعد هذه القواعد الرياضية في عد الروابط بالعين وتفادي نسيان أي رابطة مستترة في الصيغ البنائية المعقدة.", "example": "مركب يحتوي على 6 إلكترونات باي -> يحتوي على 3 روابط باي -> يحتاج إلى 3 مول من جزيئات غاز H2 (أو 6 مول من ذرات الهيدروجين) لتشبعه التام.", "quote": "كل رابطة أحادية سيجما، كل رابطة ثنائية واحدة سيجما وواحدة باي، وكل رابطة ثلاثية واحدة سيجما واثنتان باي، وعدد إلكترونات باي ضعف عدد روابط باي."}, {"id": "law_05", "title": "التقطير الجاف لأملاح الأحماض العضوية وقاعدة (نقص ذرة كربون واحدة)", "category": "الألكانات وتحضيرها", "law": "R-COONa + NaOH -(CaO, حرارة)-> R-H + Na2CO3", "desc": "التقطير الجاف لأي ملح ألكانوات صوديوم مع الجير الصودي (مخلوط من هيدروكسيد الصوديوم وأكسيد الكالسيوم CaO كمادة صاهرة لخفض درجة انصهار الخليط) ينتج دائماً ألكاناً يحتوي على عدد ذرات كربون يقل بمقدار 1 عن عدد ذرات الكربون الكلية في الملح العضوي.", "example": "• إيثانوات (أسيتات) الصوديوم (2C) تعطي ميثان (1C).\n• بروبانوات الصوديوم (3C) تعطي إيثان (2C).\n• هيكسانوات الصوديوم (6C) تعطي بنتان (5C) (وله 3 أيزوميرات).", "quote": "الملح العضوي يفقد دائماً ذرة كربون مجموعة الكربوكسيل لتخرج في كربونات الصوديوم Na2CO3، والناتج هو ألكان يقل بذرة كربون واحدة."}, {"id": "law_06", "title": "تفاعل باير وأكسدة الألكينات والإيثيلين جلايكول", "category": "الألكينات وتفاعلاتها", "law": "CH2=CH2 + H2O + [O] -(KMnO4 في وسط قلوي)-> CH2(OH)-CH2(OH)", "desc": "تفاعل باير هو تفاعل أكسدة وإضافة في آن واحد. الكاشف: محلول برمنجانات البوتاسيوم في وسط قلوي (لون بنفسجي). الدلالة: زوال اللون البنفسجي، مما يجعله اختباراً نوعياً للكشف عن الرابطة المزدوجة. الناتج: إيثيلين جلايكول (1،2-ثنائي هيدروكسي إيثان = دايول).\nأهميته: مادة مانعة لتجمد الماء في مبردات السيارات لأنه يحتوي على مجموعتي هيدروكسيل ويكون 4 روابط هيدروجينية قوية مع جزيئات الماء.", "example": "تنبيه وزاري: أكسدة الألكين بمحلول فوق أكسيد الهيدروجين H2O2 تعطي نفس الدايول ولكن لا تسمى تفاعل باير، لأن تفاعل باير يشترط حصراً برمنجانات البوتاسيوم القلوية.", "quote": "تفاعل باير أكسدة وإضافة متزامنة ببرمنجانات قلوية يزول معها اللون البنفسجي ويتكون دايول يمنع تجمد الماء بروابط هيدروجينية رباعية."}, {"id": "law_07", "title": "استراتيجية (نهايتك هي بدايتك) في تسمية ورسم المركبات العضوية", "category": "تسمية IUPAC", "law": "عند رسم مركب من اسمه أو تصحيح تسمية خاطئة: ابدأ من الكلمة الأخيرة (اسم السلسلة الكربونية الأطول) -> ارسم ذرات الكربون -> رقّم السلسلة -> وزع التفرعات حسب الأرقام المذكورة -> أعد تسمية المركب بنفسك لاختيار أطول سلسلة وتصحيح الترقيم.", "desc": "تمنع هذه الطريقة الوقوع في فخ التسميات غير النظامية التي يذكرها واضع الامتحان للتمويه.", "example": "تسمية خاطئة: (2-إيثيل بيوتان). عند البدء من بيوتان (4C) ووضع إيثيل على الكربونة 2، يتضح أن أطول سلسلة أصبحت 5 ذرات كربون (بنتان)، والاسم النظامي الصحيح هو: 3-ميثيل بنتان.", "quote": "ابدأ دائماً من نهاية الاسم المعطى، ارسم الهيكل الكربوني الأساسي، ثم أعد التسمية باختيار أطول سلسلة من جديد."}, {"id": "law_08", "title": "قواعد فك الأقواس في الصيغ المكثفة للألكانات والألكينات", "category": "تسمية IUPAC", "law": "• مجموعات -(CH2)n- ثنائية التكافؤ: تُفرد كروابط متصلة داخل السلسلة الكربونية الرئيسية.\n• مجموعات -(CH3)n أحادية التكافؤ: لا توضع داخل السلسلة أبداً، بل تخرج كتفرعات رأسية متصلة بذرة الكربون السابقة لها.", "desc": "عدم فك الأقواس بصورة صحيحة هو السبب الأول للخطأ في اختيار أطول سلسلة كربونية أثناء التسمية.", "example": "المركب (CH3)3C-CH2-CH(CH3)2 يفك ليصبح ذرة كربون مرتبطة بثلاث مجموعات ميثيل تفرع، متصلة بـ CH2، ثم CH متصلة بتفرعي ميثيل، واسمه الصحيح: 2،2،4-ثلاثي ميثيل بنتان.", "quote": "مجموعات الميثيلين CH2 تمتد في قلب السلسلة، بينما مجموعات الميثيل CH3 أطراف وتفرعات لا يمكن أن تقع في منتصف سلسلة متصلة."}, {"id": "law_09", "title": "استنتاج ورسم مقطع البوليمر بالإضافة بالعين في خطوة واحدة", "category": "الألكينات والبلمرة", "law": "امسك المونومر -> اكسر الرابطة المزدوجة بين ذرتي الكربون -> اجعل ذرتي كربون الرابطة هما فقط المحور الأفقي للسلسلة -> انقل أي ذرات أو مجموعات أخرى لتكون تفرعات رأسية (أعلى وأسفل) -> افتح رابطتي اتصال جانبيتين وضع القوسين مع رمز n.", "desc": "مهما كان المونومر معقداً أو يحتوي على هالوجينات أو مجموعات ألكيل أو فينيل، تظل سلسلة البوليمر الرئيسية مكونة فقط من ذرتي كربون الرابطة المزدوجة الأصلية.", "example": "بلمرة البروبين CH2=CH-CH3: اكسر الرابطة الثنائية، وضع CH3 تفرعاً لأسفل على كربونتها، وضع الأقواس: -[-CH2-CH(CH3)-]n- (بولي بروبيلين PP).", "quote": "سلسلة البوليمر لا يمر فيها سوى كربونتي الرابطة المزدوجة، وكل ما سواهما يُطرد عمودياً للأعلى والأسفل."}, {"id": "law_10", "title": "قوانين احتراق الهيدروكربونات وحساب عدد مولات الأكسجين والماء", "category": "قوانين الحساب السريع", "law": "احتراق 1 مول من:\n• ألكان (CnH2n+2): يحتاج (3n + 1)/2 مول O2، وينتج n مول CO2 و (n + 1) مول بخار ماء H2O.\n• ألكين (CnH2n): يحتاج (3n)/2 مول O2، وينتج n مول CO2 و n مول بخار ماء H2O.\n• ألكاين (CnH2n-2): يحتاج (3n - 1)/2 مول O2، وينتج n مول CO2 و (n - 1) مول بخار ماء H2O.", "desc": "تعتبر هذه العلاقات أداة حاسمة لحل مسائل الحساب الكيميائي في احتراق الهيدروكربونات دون الحاجة لموازنة المعادلات يدوياً في الامتحان.", "example": "احتراق 1 مول من ألكين CnH2n يحتاج إلى (1.5n) مول من غاز الأكسجين O2، وينتج عنه حجوم متساوية من CO2 وبخار الماء عند نفس الظروف.", "quote": "تذكر ثلاثية الأكسجين دائماً: للألكان (3n+1)/2، وللألكين 3n/2، وللألكاين (3n-1)/2."}, {"id": "law_11", "title": "مقارنة درجات الغليان وقواعد التفرع في المتشكلات الجزيئية", "category": "الخواص الفيزيائية", "law": "1. بزيادة عدد ذرات الكربون (الكتلة المولية) -> تزداد قوى التجاذب بين الجزيئات (قوى فان دير فالس) فترتفع درجة الغليان.\n2. عند تساوي عدد ذرات الكربون (بين الأيزوميرات) -> السلسلة المستقيمة غير المتفرعة تكون أعلى دائماً في درجة الغليان، وبزيادة التفرعات تقل درجة الغليان.", "desc": "التعليل العلمي: التفرع يمنح الجزيء شكلاً كروياً يقلل من المساحة السطحية المعرضة للتلامس والتجاذب بين الجزيئات، مما يسهل فصلها بالحرارة.", "example": "البنتان العادي (سلسلة مستمرة) أعلى غلياناً من 2-ميثيل بيوتان، وأعلى بكثير من 2،2-ثنائي ميثيل بروبان.", "quote": "كلما زادت الكتلة المولية ارتفعت درجة الغليان، وفي الأيزوميرات: الأقل تفرعاً هو الأعلى غلياناً لمساحة سطحه الأكبر."}, {"id": "law_12", "title": "تحضير الإيثين من الإيثانول وشروط درجات الحرارة (80°C مقابل 180°C)", "category": "الألكينات وتحضيرها", "law": "• عند 80°C (تكوين إستر): C2H5OH + H2SO4 -> C2H5OSO3H (كبريتات إيثيل هيدروجينية) + H2O\n• عند 180°C (انحلال حراري): C2H5OSO3H -> C2H4 (إيثين) + H2SO4\n• عند 110°C (تحلل مائي): C2H5OSO3H + H2O -> C2H5OH + H2SO4\n• عند 140°C (نزع جزيء ماء من جزيئي كحول): ينتج إيثر ثنائي الإيثيل C2H5-O-C2H5", "desc": "حمض الكبريتيك المركز يعمل كمادة نازعة للماء، ويتطلب تحضير الإيثين رفع درجة الحرارة إلى 180°C لإتمام الانحلال الحراري لكبريتات الإيثيل الهيدروجينية، مع إمرار الغاز على محلول NaOH لإزالة الأبخرة الحمضية.", "example": "في المخططات الوزارية: عند رؤية 180°C مع الإيثانول، يكون الغاز الناتج مباشرة هو غاز الإيثين C2H4.", "quote": "درجة الحرارة هي العامل المحدد لنواتج تفاعل الإيثانول مع حمض الكبريتيك: 80°C كبريتات إيثيل هيدروجينية، و 180°C غاز الإيثين."}];
+        const w1Db = [{"id": "w1_q01", "workshop": 1, "number": 1, "source": "امتحان تجريبي يونيو 2021", "topic": "الصيغ البنائية وتكافؤ الكربون", "question": "في الصيغة المقابلة لمركب هيدروكربوني صيغته الجزيئية C6H12 ويحتوي على أخطاء في تكافؤ ذرات الكربون:\nما الصيغة البنائية الصحيحة له بشرط عدم تغيير الصيغة الجزيئية؟", "options": ["أ) تكوين ألكان حلقي (هكسان حلقي C6H12) أو ألكين متفرع يحقق تكافؤ الكربون الرباعي", "ب) إضافة ذرتي هيدروجين ليصبح C6H14", "ج) نزع ذرتي هيدروجين ليصبح C6H10", "د) تحويله لمركب أروماتي C6H6"], "correct_answer": "أ) تكوين ألكان حلقي (هكسان حلقي C6H12) أو ألكين متفرع يحقق تكافؤ الكربون الرباعي", "teacher_method": "الصيغة الجزيئية المعطاة هي C6H12 وتطابق القانون العام CnH2n. شرط السؤال الصارم هو 'عدم تغيير الصيغة الجزيئية'، مما يعني ثبات عدد ذرات الكربون (6) والهيدروجين (12). وبما أن تكافؤ الكربون رباعي دائماً وتكافؤ الهيدروجين أحادي، فإن إعادة كتابة الروابط بصورة كيميائية صحيحة تقتضي إما تكوين رابطة مزدوجة (ألكين) أو إغلاق السلسلة لتكوين ألكان حلقي (مثل الهكسان الحلقي أو ميثيل بنتان حلقي).", "trick_alert": "احذر اختيار أي خيار يقوم بزيادة أو إنقاص ذرات الهيدروجين؛ شرط السؤال نص صراحة على عدم المساس بالصيغة الجزيئية.", "tags": ["أساسيات", "تكافؤ الكربون", "صيغ بنائية", "تجريبي 2021"]}, {"id": "w1_q02", "workshop": 1, "number": 2, "source": "امتحان تجريبي مايو 2021", "topic": "تصنيف الهيدروكربونات", "question": "المركبات التالية تمثل ثلاثة هيدروكربونات:\n• المركب (X): صيغته C3H6\n• المركب (Y): صيغته C7H8\n• المركب (Z): صيغته C3H8\nأي العبارات التالية صحيحة في تصنيف هذه المركبات؟", "options": ["أ) (X) ألكان حلقي أو ألكين، (Y) هيدروكربون أروماتي (طولوين)، (Z) ألكان أليفاتي مشبع", "ب) (X) ألكاين غير مشبع، (Y) ألكان حلقي، (Z) ألكين", "ج) جميعها هيدروكربونات أليفاتية مشبعة مفتوحة السلسلة", "د) (Y) ألكان مفتوح السلسلة و (X) مركب أروماتي"], "correct_answer": "أ) (X) ألكان حلقي أو ألكين، (Y) هيدروكربون أروماتي (طولوين)، (Z) ألكان أليفاتي مشبع", "teacher_method": "التصنيف يعتمد على تطبيق القوانين العامة:\n• C3H6 ينطبق عليه CnH2n، فيحتمل أن يكون ألكيناً (البروبين) أو ألكاناً حلقياً (البروبان الحلقي).\n• C3H8 ينطبق عليه CnH2n+2 (ضعف الكربون + 2)، فهو ألكان أليفاتي مشبع مفتوح السلسلة (البروبان).\n• C7H8 تنطبق عليه صيغة مشتقات البنزين العطري الأروماتية (حلقة بنزين C6H5 متصلة بمجموعة ميثيل CH3 وهو الطولوين).", "trick_alert": "صيغة C7H8 شهيرة جداً في امتحانات الثانوية العامة وتدل دائماً على الطولوين (ميثيل بنزين)، وهو هيدروكربون أروماتي غير مشبع.", "tags": ["تصنيف الهيدروكربونات", "طولوين", "ألكان حلقي", "تجريبي 2021"]}, {"id": "w1_q03", "workshop": 1, "number": 3, "source": "امتحان دور أول 2023", "topic": "خواص الألكانات والروابط سيجما", "question": "أربعة مركبات (A, B, C, D)، إذا كان المركب (A) صيغته الجزيئية C3H8، فما هو التوصيف العلمي الدقيق لخواص المركب (A)؟", "options": ["أ) هيدروكربون أليفاتي مشبع مفتوح السلسلة جميع روابطه أحادية من النوع سيجما القوية", "ب) هيدروكربون أليفاتي غير مشبع يحتوي على رابطة باي ضعيفة", "ج) هيدروكربون أروماتي حلقي غير مشبع", "د) مشتق هيدروكربوني يحتوي على روابط قطبية قابلة للتأين"], "correct_answer": "أ) هيدروكربون أليفاتي مشبع مفتوح السلسلة جميع روابطه أحادية من النوع سيجما القوية", "teacher_method": "الصيغة الجزيئية C3H8 تتبع صيغة الألكانات CnH2n+2. الألكانات هي هيدروكربونات أليفاتية مشبعة مفتوحة السلسلة، ترتبط جميع ذراتها بروابط تساهمية أحادية قوية من النوع سيجما (σ) الناتجة عن تداخل الأوربيتالات الذرية بالرأس، وهي صعبة الكسر وخاملة كيميائياً في الظروف العادية.", "trick_alert": "الألكانات تتميز بأن جميع روابطها أحادية سيجما قوية وتخلو تماماً من روابط باي، كما تتمتع بأعلى نسبة هيدروجين بين الهيدروكربونات.", "tags": ["ألكانات", "روابط سيجما", "دور أول 2023"]}, {"id": "w1_q04", "workshop": 1, "number": 4, "source": "امتحان دور أول 2023", "topic": "الألكاينات والهيدروكربونات الأروماتية", "question": "في نفس السياق: المركب (B) صيغته الجزيئية C3H4، ومركب آخر صيغته C10H8. ما هو تصنيف هذين المركبين؟", "options": ["أ) (B) ألكاين أليفاتي غير مشبع مفتوح السلسلة، و C10H8 هيدروكربون أروماتي (النفتالين)", "ب) (B) ألكان حلقي مشبع، و C10H8 ألكين مفتوح السلسلة", "ج) كلاهما هيدروكربونات أليفاتية مشبعة", "د) كلاهما مركبات أروماتية حلقية تحتوي على حلقات بنزين"], "correct_answer": "أ) (B) ألكاين أليفاتي غير مشبع مفتوح السلسلة، و C10H8 هيدروكربون أروماتي (النفتالين)", "teacher_method": "• C3H4 يتبع الصيغة العامة CnH2n-2 (ضعف الكربون مطروحاً منه 2: 2×3 - 2 = 4)، فهو ألكاين يحتوي على رابطة ثلاثية (البروباين).\n• C10H8 يمثل الصيغة الجزيئية للنفتالين، وهو هيدروكربون أروماتي يتكون من حلقتي بنزين ملتحمتين ويحتوي على 5 روابط باي.", "trick_alert": "يجب حفظ الصيغ الجزيئية للمركبات الأروماتية الشهيرة في المنهج: البنزين العطري C6H6، الطولوين C7H8، النفتالين C10H8، ثنائي الفينيل C12H10، والأنثراسين C14H10.", "tags": ["ألكاينات", "نفتالين", "أروماتي", "دور أول 2023"]}, {"id": "w1_q05", "workshop": 1, "number": 5, "source": "امتحان تجريبي 2021", "topic": "المشابهة الجزيئية للألكانات المستمرة", "question": "هيدروكربون مستمر السلسلة يعتبر أيزومراً للمركب (2،3-ثنائي ميثيل هكسان)، ما هو هذا الهيدروكربون؟", "options": ["أ) الأوكتان العادي (n-Octane)", "ب) الهبتان العادي", "ج) النونان العادي", "د) الهكسان العادي"], "correct_answer": "أ) الأوكتان العادي (n-Octane)", "teacher_method": "استراتيجية الحل بالعين:\nالسلسلة الأساسية في المركب هي هكسان (6 ذرات كربون)، ويحتوي على تفرعين ميثيل (كل تفرع ذرة كربون واحدة = 2 كربون إضافي). المجموع الكلي لذرات الكربون = 6 + 2 = 8 ذرات كربون (الصيغة C8H18).\nوالمطلوب في السؤال 'هيدروكربون مستمر السلسلة'، أي سلسلة مفرودة دون تفرعات بنفس عدد ذرات الكربون، وهو الأوكتان العادي CH3-(CH2)6-CH3.", "trick_alert": "المصطلح 'مستمر السلسلة' يعني ألكاناً مستقيماً (Normal Alkane) يخلو تماماً من التفرعات الجانبية.", "tags": ["أيزوميرات", "حل بالعين", "أوكتان", "تجريبي 2021"]}, {"id": "w1_q06", "workshop": 1, "number": 6, "source": "أفكار الثانوية العامة والسنتر", "topic": "استبعاد الأيزوميرات بحساب عدد ذرات الكربون", "question": "أي من المركبات التالية ليس من المتشكلات الجزيئية (الأيزوميرات) للمركب (2،3-ثنائي ميثيل بيوتان)؟", "options": ["أ) 2-ميثيل بنتان", "ب) 3-ميثيل بنتان", "ج) 2،2-ثنائي ميثيل بروبان", "د) الهكسان العادي"], "correct_answer": "ج) 2،2-ثنائي ميثيل بروبان", "teacher_method": "الشرط الأول والأساسي للأيزوميرات هو التطابق التام في الصيغة الجزيئية (نفس عدد ذرات الكربون والهيدروجين):\nالمركب المعطى: بيوتان (4C) + فرعي ميثيل (2C) = 6 ذرات كربون (C6H14).\n• الاختيار (أ): بنتان (5C) + ميثيل (1C) = 6 ذرات كربون (أيزومر).\n• الاختيار (ب): بنتان (5C) + ميثيل (1C) = 6 ذرات كربون (أيزومر).\n• الاختيار (د): هكسان = 6 ذرات كربون (أيزومر).\n• الاختيار (ج): بروبان (3C) + فرعي ميثيل (2C) = 5 ذرات كربون فقط (C5H12)، وبالتالي يستحيل أن يكون أيزومراً له!", "trick_alert": "لا تضيع وقتك في رسم الصيغ البنائية المفصلة؛ احسب عدد ذرات الكربون الكلية أولاً، فإذا اختلف العدد يسقط خيار الأيزومر فوراً.", "tags": ["أيزوميرات", "عد الكربونات", "حل بالعين"]}, {"id": "w1_q07", "workshop": 1, "number": 7, "source": "مسائل الثانوية العامة", "topic": "استنتاج الصيغة الجزيئية وعدد الأيزوميرات من الكتلة المولية", "question": "إذا كانت الكتلة المولية لألكان أليفاتي مفتوح السلسلة تساوي 86 g/mol، فإن صيغته الجزيئية وعدد أيزوميراته هما: (علماً بأن C = 12, H = 1)", "options": ["أ) C6H14 (الهكسان) وله 5 أيزوميرات", "ب) C5H12 (البنتان) وله 3 أيزوميرات", "ج) C7H16 (الهبتان) وله 9 أيزوميرات", "د) C4H10 (البيوتان) وله أيزومران"], "correct_answer": "أ) C6H14 (الهكسان) وله 5 أيزوميرات", "teacher_method": "تطبيق قانون الحساب السريع للألكانات:\nالكتلة المولية للألكان = 14n + 2 = 86\n14n = 86 - 2 = 84\nn = 84 / 14 = 6 ذرات كربون.\nإذن الصيغة الجزيئية هي C6H14 وهو الهكسان. وعدد أيزوميرات الهكسان المعتمدة منهجياً هو 5 أيزوميرات (الهكسان العادي، 2-ميثيل بنتان، 3-ميثيل بنتان، 2،2-ثنائي ميثيل بيوتان، 2،3-ثنائي ميثيل بيوتان).", "trick_alert": "احفظ تدرج أعداد أيزوميرات الألكانات الأولى للسرعة في الامتحان: الميثان والإيثان والبروبان (أيزومر واحد فقط لكل منها)، البيوتان (2)، البنتان (3)، الهكسان (5)، الهبتان (9).", "tags": ["كتلة مولية", "حساب سريع", "أيزوميرات"]}, {"id": "w1_q08", "workshop": 1, "number": 8, "source": "امتحان تجريبي مايو 2021", "topic": "تسمية IUPAC مع فك الصيغ المكثفة", "question": "ما التسمية الصحيحة بنظام الأيوباك (IUPAC) للمركب ذي الصيغة المكثفة المقابلة:\n(CH3)3C-CH2-CH(CH3)2 ؟", "options": ["أ) 2،2،4-ثلاثي ميثيل بنتان", "ب) 2،4،4-ثلاثي ميثيل بنتان", "ج) 2،2-ثنائي ميثيل هكسان", "د) أيزوأوكتان"], "correct_answer": "أ) 2،2،4-ثلاثي ميثيل بنتان", "teacher_method": "قواعد فك الصيغة المكثفة:\n1. التجمع (CH3)3C يعني ذرة كربون رابعية ترتبط بثلاث مجموعات ميثيل كتفرعات.\n2. التجمع CH(CH3)2 يعني ذرة كربون ترتبط بمجموعتي ميثيل كتفرعات.\n3. عند فك الصيغة، نجد أن أطول سلسلة كربونية متصلة تتكون من 5 ذرات كربون (بنتان).\n4. الترقيم: نبدأ من الطرف الأقرب والأكثر تفرعاً (الطرف الأيسر الذي يحمل فرعي ميثيل على الكربونة 2 بدلاً من الطرف الأيمن الذي يحمل فرعاً واحداً على الكربونة 2)، ليعطي أقل مجموع لأرقام التفرعات (2 + 2 + 4 = 8)، فيكون الاسم: 2،2،4-ثلاثي ميثيل بنتان.", "trick_alert": "عند تساوي موضع التفرعات من الطرفين (كلاهما يبدأ التفرع عند الكربونة رقم 2)، يكون الحسم للطرف 'الأكثر تفرعاً' لتقليل مجموع الأرقام.", "tags": ["تسمية IUPAC", "فك الأقواس", "أطول سلسلة"]}, {"id": "w1_q09", "workshop": 1, "number": 9, "source": "أفكار الثانوية العامة المنهجية", "topic": "تصحيح التسميات الخاطئة للألكانات", "question": "سمى طالب أحد المركبات بالاسم التالي: (2-إيثيل-3-ميثيل بيوتان). ما هو الاسم النظامي الصحيح للمركب بنظام الأيوباك؟", "options": ["أ) 2،3-ثنائي ميثيل بنتان", "ب) 3،4-ثنائي ميثيل بنتان", "ج) 2-إيثيل بنتان", "د) 3-ميثيل هكسان"], "correct_answer": "أ) 2،3-ثنائي ميثيل بنتان", "teacher_method": "قاعدة 'نهايتك هي بدايتك':\n1. ارسم المركب طبقاً لكلام الطالب الخاطئ بدءاً من الكلمة الأخيرة: بيوتان (4 ذرات كربون).\n2. ضع مجموعة إيثيل (CH2-CH3) على ذرة الكربون رقم 2، ومجموعة ميثيل (CH3) على ذرة الكربون رقم 3.\n3. أعد تحديد أطول سلسلة كربونية متصلة بشكل مستقل: ستجد أن السلسلة المستمرة تنعطف مع مجموعة الإيثيل لتصبح 5 ذرات كربون (بنتان)، وتتحول الكربونة رقم 2 الأصلية إلى تفرع ميثيل.\n4. بالترقيم الصحيح من الطرف الأقرب للتفرعات، يكون الاسم النظامي الصحيح هو: 2،3-ثنائي ميثيل بنتان.", "trick_alert": "فرع الإيثيل (-C2H5) يستحيل كيميائياً أن يقع على ذرة الكربون رقم 2 في سلسلة بيوتان، لأنه يطيل السلسلة دائماً إلى 5 ذرات كربون (بنتان).", "tags": ["تسمية خاطئة", "تصحيح التسمية", "IUPAC"]}, {"id": "w1_q10", "workshop": 1, "number": 10, "source": "امتحانات الثانوية العامة", "topic": "مجموعات الميثيلين والتفرعات في الألكانات", "question": "أي من الهيدروكربونات المشبعة التالية يخلو تركيبه تماماً من أي مجموعة ميثيلين (-CH2-)؟", "options": ["أ) 2،2-ثنائي ميثيل بروبان (النيوبنتان)", "ب) البنتان العادي", "ج) 2-ميثيل بيوتان", "د) البروبان"], "correct_answer": "أ) 2،2-ثنائي ميثيل بروبان (النيوبنتان)", "teacher_method": "مجموعة الميثيلين هي (-CH2-). في مركب 2،2-ثنائي ميثيل بروبان (نيوبنتان)، ترتبط ذرة الكربون المركزية بأربع مجموعات ميثيل (-CH3) ولا تحتوي على أي ذرة هيدروجين، والذرات الأربع المحيطة هي مجموعات ميثيل طرفية أحادية التكافؤ. وبالتالي يحتوي المركب على 4 مجموعات ميثيل، وصفر من مجموعات الميثيلين.", "trick_alert": "بزيادة عدد تفرعات الميثيل في أيزوميرات الألكان، يقل عدد مجموعات الميثيلين حتى يصل إلى الصفر تماماً في الألكانات ذات الكربون الرباعي المتماثل.", "tags": ["ميثيلين", "نيوبنتان", "تفرعات"]}, {"id": "w1_q11", "workshop": 1, "number": 11, "source": "امتحان تجريبي 2021", "topic": "التقطير الجاف لأملاح الأحماض الكربوكسيلية", "question": "عند إجراء التقطير الجاف لملح هيكسانوات الصوديوم مع الجير الصودي، ما هو الهيدروكربون الناتج وكم عدد أيزوميراته؟", "options": ["أ) البنتان (C5H12) وله 3 أيزوميرات", "ب) الهكسان (C6H14) وله 5 أيزوميرات", "ج) البيوتان (C4H10) وله أيزومران", "د) البروبان (C3H8) وله أيزومر واحد"], "correct_answer": "أ) البنتان (C5H12) وله 3 أيزوميرات", "teacher_method": "معادلة التقطير الجاف:\nC5H11COONa + NaOH -(CaO, حرارة)-> C5H12 + Na2CO3\nقاعدة التقطير الجاف الصارمة: الألكان الناتج يقل بمقدار ذرة كربون واحدة عن الملح العضوي المستخدم، لأن ذرة كربون مجموعة الكربوكسيل تخرج مع الجير الصودي على هيئة كربونات صوديوم Na2CO3.\nهيكسانوات الصوديوم (6C) تعطي بنتان (5C وهو C5H12)، وعدد أيزوميرات البنتان هو 3 أيزوميرات.", "trick_alert": "الجير الصودي خليط من NaOH و CaO، ودور CaO هو مادة صاهرة تعمل على خفض درجة انصهار الخليط ولا تدخل في المعادلة المتفاعلة.", "tags": ["التقطير الجاف", "الجير الصودي", "بنتان"]}, {"id": "w1_q12", "workshop": 1, "number": 12, "source": "أسئلة الامتحانات المنهجية", "topic": "حسابات احتراق الألكانات ومولات بخار الماء", "question": "عند احتراق مول واحد من ألكان مفتوح السلسلة صيغته العامة CnH2n+2 احتراقاً تاماً في وفرة من غاز الأكسجين، فإن عدد مولات بخار الماء (H2O) الناتجة يساوي:", "options": ["أ) n + 1", "ب) n", "ج) 2n + 2", "د) (3n + 1)/2"], "correct_answer": "أ) n + 1", "teacher_method": "المعادلة الموزونة لاحتراق الألكان:\nCnH2n+2 + [(3n+1)/2] O2 -> n CO2 + (n+1) H2O\nيحتوي الألكان على (2n + 2) ذرة هيدروجين. وبما أن كل جزيء ماء يتطلب ذرتي هيدروجين، فإن عدد مولات الماء الناتجة هو: (2n + 2) / 2 = n + 1 مول.", "trick_alert": "احرص على التمييز بين: عدد مولات CO2 الناتجة (= n)، عدد مولات بخار الماء الناتجة (= n + 1 للألكان)، وعدد مولات غاز الأكسجين المستهلكة (= (3n+1)/2).", "tags": ["احتراق", "ألكانات", "حساب كمي"]}, {"id": "w1_q13", "workshop": 1, "number": 13, "source": "امتحانات الثانوية العامة", "topic": "تجربة فوهلر وتحطيم نظرية القوى الحيوية", "question": "ما النتيجة العلمية المترتبة على التجربة التاريخية التي أجراها العالم الألماني فوهلر عام 1828؟", "options": ["أ) أصبح التعرف على المركبات العضوية يعتمد على بنيتها التركيبية وليس على مصدرها", "ب) إثبات صحة نظرية القوى الحيوية لبيرزيليوس", "ج) إثبات أن المركبات العضوية لا تتكون إلا داخل أنسجة وخلايا الكائنات الحية", "د) اقتصار تصنيع المركبات العضوية على المصادر الحيوانية فقط"], "correct_answer": "أ) أصبح التعرف على المركبات العضوية يعتمد على بنيتها التركيبية وليس على مصدرها", "teacher_method": "تمكن فوهلر من تحضير مركب اليوريا (مركب عضوي بول الثدييات) في المختبر بتسخين محلول مائي لمركبين غير عضويين هما كلوريد الأمونيوم وسيانات الفضة، فنتجت سيانات الأمونيوم NH4CNO التي انحلت بالحرارة إلى يوريا CO(NH2)2. هذا الاكتشاف أسقط نظرية القوى الحيوية لبيرزيليوس، وفتح الباب أمام تخليق ملايين المركبات العضوية، وأصبح تصنيف المركب العضوي مبنياً على بنيته الجزيئية وليس أصله الحيوي.", "trick_alert": "اليوريا وسيانات الأمونيوم أيزومران لهما نفس الصيغة الجزيئية CH4N2O، لكن اليوريا مركب عضوي وسيانات الأمونيوم مركب غير عضوي.", "tags": ["فوهلر", "القوى الحيوية", "اليوريا"]}, {"id": "w1_q14", "workshop": 1, "number": 14, "source": "امتحانات الثانوية العامة", "topic": "الكشف عن عنصري الكربون والهيدروجين في المادة العضوية", "question": "في تجربة الكشف عن عنصري الكربون والهيدروجين في مركب عضوي بالتسخين مع أكسيد النحاس الأسود (CuO):\nما التغير الكيميائي الحادث لكل من ماء الجير الرائق وكبريتات النحاس اللامائية البيضاء؟", "options": ["أ) يتعكر ماء الجير لتصاعد CO2، وتزرق كبريتات النحاس لامتصاص بخار الماء H2O", "ب) يتعكر ماء الجير لتصاعد H2O، وتتحول كبريتات النحاس للون الأسود", "ج) لا يحدث أي تغير لماء الجير، وتختزل كبريتات النحاس إلى غاز كبريتيد الهيدروجين", "د) يتصاعد غاز الهيدروجين الذي يشتعل بفرقعة دون تعكير ماء الجير"], "correct_answer": "أ) يتعكر ماء الجير لتصاعد CO2، وتزرق كبريتات النحاس لامتصاص بخار الماء H2O", "teacher_method": "أكسيد النحاس الأسود (CuO) عامل مؤكسد قوي للمادة العضوية:\n• يؤكسد الكربون العضوي إلى غاز ثنائي أكسيد الكربون CO2 الذي يعكر ماء الجير الرائق Ca(OH)2 نتيجة تكوين كربونات الكالسيوم CaCO3 غير الذائبة في الماء.\n• يؤكسد الهيدروجين العضوي إلى بخار ماء H2O الذي يحول كبريتات النحاس اللامائية البيضاء إلى كبريتات نحاس مائية زرقاء CuSO4.5H2O.\n• يختزل أكسيد النحاس الأسود CuO أثناء التفاعل إلى فلز النحاس الأحمر Cu.", "trick_alert": "لون مادة CuO يتغير من الأسود إلى الأحمر (نحاس فلزي)، وهو دليل إضافي على حدوث تفاعل أكسدة واختزال ذاتي.", "tags": ["الكشف عن C و H", "CuO", "ماء الجير"]}, {"id": "w1_q15", "workshop": 1, "number": 15, "source": "امتحان دور أول 2022", "topic": "هلجنة الميثان بالاستبدال وتكوين CCl4", "question": "للحصول على 1 مول من رابع كلوريد الكربون (CCl4) انطلاقاً من 1 مول من غاز الميثان (CH4)، يلزم تفاعله مع كم مول من غاز الكلور (Cl2) في وجود الأشعة فوق البنفسجية UV؟", "options": ["أ) 4 مول من غاز الكلور Cl2", "ب) 2 مول من غاز الكلور Cl2", "ج) 1 مول من غاز الكلور Cl2", "د) 8 مول من غاز الكلور Cl2"], "correct_answer": "أ) 4 مول من غاز الكلور Cl2", "teacher_method": "تفاعل الألكانات مع الهالوجينات في وجود UV هو تفاعل إحلال (استبدال) متسلسل:\nCH4 + Cl2 -> CH3Cl + HCl\nCH3Cl + Cl2 -> CH2Cl2 + HCl\nCH2Cl2 + Cl2 -> CHCl3 + HCl\nCHCl3 + Cl2 -> CCl4 + HCl\nكل ذرة هيدروجين تُستبدل تتطلب جزيئاً واحداً من الكلور (1 مول Cl2)، وينتج عنها جزيء من HCl. وبما أن الميثان يحتوي على 4 ذرات هيدروجين، فإن الاستبدال التام يتطلب 4 مول من غاز الكلور Cl2 (وينتج 4 مول HCl).", "trick_alert": "انتبه لصيغة السؤال بدقة: هل المطلوب 'عدد مولات غاز الكلور' أي جزيئات Cl2 (والإجابة 4 مول)، أم 'عدد مولات ذرات الكلور' (والإجابة 8 مول ذرة).", "tags": ["هلجنة بالاستبدال", "ميثان", "رابع كلوريد الكربون"]}];
+        const w2Db = [{"id": "w2_q01", "workshop": 2, "number": 1, "source": "امتحان الثانوية العامة — سؤال الربط النوعي", "topic": "أولويات تفاعلات الإضافة بين الروابط الثلاثية والثنائية", "question": "إذا أضيف 2 مول من غاز الهيدروجين (H2) في وجود عامل حفاز إلى مركب يحتوي على رابطة ثنائية ورابطة ثلاثية صيغته:\nCH2=CH-C≡CH\nثم أضيف إلى الناتج 1 مول من غاز الكلور (Cl2)، فما الاسم النظامي بنظام الأيوباك للمركب النهائي المتكون؟", "options": ["أ) 1،2-ثنائي كلورو بيوتان", "ب) 1،4-ثنائي كلورو بيوتان", "ج) 2،3-ثنائي كلورو بيوتان", "د) 1،1-ثنائي كلورو بيوتان"], "correct_answer": "أ) 1،2-ثنائي كلورو بيوتان", "teacher_method": "القاعدة العلمية الحاكمة:\nعند تواجد رابطة ثلاثية ورابطة ثنائية في نفس المركب، فإن الرابطة الثلاثية تكون أكثر نشاطاً وتستهلك الـ 2 مول من غاز الهيدروجين أولاً لتتشبع بالكامل وتتحول إلى رابطة أحادية (-CH2-CH3).\nالناتج بعد الهدرجة هو: 1-بيوتين (CH2=CH-CH2-CH3).\nعند إضافة 1 مول من غاز الكلور Cl2، تتم الإضافة بكسر الرابطة المزدوجة المتبقية، وتضاف ذرة كلور إلى ذرة الكربون 1 وذرة كلور إلى ذرة الكربون 2، فينتج المركب: CH2Cl-CHCl-CH2-CH3 وهو 1،2-ثنائي كلورو بيوتان.", "trick_alert": "لا تقم بتوزيع الهيدروجين بالتساوي بين الرابطة الثنائية والثلاثية؛ الرابطة الثلاثية تستهلك مولين كاملين من الهيدروجين لتتشبع بالكامل أولاً.", "tags": ["هدرجة", "أولويات الروابط", "ألكاين وألكين", "IUPAC"]}, {"id": "w2_q02", "workshop": 2, "number": 2, "source": "امتحانات الثانوية العامة", "topic": "استثناءات قاعدة ماركونيكوف في الألكينات المتماثلة", "question": "في أي من التفاعلات التالية لا تخضع الإضافة لقاعدة ماركونيكوف؟", "options": ["أ) إضافة بروميد الهيدروجين (HBr) إلى 2-بيوتين", "ب) إضافة بروميد الهيدروجين (HBr) إلى البروبين", "ج) إضافة بروميد الهيدروجين (HBr) إلى 1-بيوتين", "د) إضافة الماء في وسط حمضي إلى 2-ميثيل بروبين"], "correct_answer": "أ) إضافة بروميد الهيدروجين (HBr) إلى 2-بيوتين", "teacher_method": "شروط تطبيق ماركونيكوف تتطلب أن يكون الألكين 'غير متماثل'.\nمركب 2-بيوتين صيغته البنائية هي: CH3-CH=CH-CH3.\nذرتي كربون الرابطة المزدوجة (الكربونة 2 و 3) ترتبط كل منهما بذرة هيدروجين واحدة، مما يجعله ألكيناً متماثلاً تماماً. إضافة HBr إليه ستعطي نفس الناتج وهو 2-برومو بيوتان أينما أضيف الهيدروجين أو البروم، وبالتالي لا تنطبق عليه قاعدة ماركونيكوف.", "trick_alert": "في الألكين المتماثل، ذرات كربون الرابطة المزدوجة تكون متطابقة في عدد ذرات الهيدروجين، وتسقط شروط ماركونيكوف تماماً.", "tags": ["ماركونيكوف", "ألكين متماثل", "2-بيوتين"]}, {"id": "w2_q03", "workshop": 2, "number": 3, "source": "امتحان تجريبي 2021", "topic": "تطبيق ماركونيكوف المزدوج على الألكاينات", "question": "للحصول على مركب (2،2-ثنائي برومو بروبان) انطلاقاً من هيدروكربون غير مشبع، نقوم بـ:", "options": ["أ) إضافة 2 مول من بروميد الهيدروجين (HBr) إلى البروباين", "ب) إضافة 1 مول من ماء البروم (Br2) إلى البروبين", "ج) إضافة 1 مول من بروميد الهيدروجين (HBr) إلى البروبين", "د) إضافة 2 مول من ماء البروم (Br2) إلى البروباين"], "correct_answer": "أ) إضافة 2 مول من بروميد الهيدروجين (HBr) إلى البروباين", "teacher_method": "البروباين ألكاين غير متماثل صيغته: CH3-C≡CH.\n• في المرحلة الأولى: إضافة 1 مول HBr تطبق قاعدة ماركونيكوف؛ فيتجه H+ إلى كربونة الطرف (CH) وتتجه Br- إلى الكربونة الوسطية (C)، ليتكون 2-برومو بروبين (CH3-CBr=CH2).\n• في المرحلة الثانية: إضافة المول الثاني من HBr تطبق قاعدة ماركونيكوف مرة ثانية؛ فيتجه H+ إلى كربونة الطرف (CH2) لتصبح CH3، وتتجه Br- إلى الكربونة الوسطية الحاملة لذرة البروم الأولى، ليتكون مركب: CH3-CBr2-CH3 وهو 2،2-ثنائي برومو بروبان.", "trick_alert": "إضافة ماء البروم Br2 تعطي ذرتي هالوجين على ذرتي كربون متجاورتين (1،2)، بينما إضافة 2 مول HX تعطي ذرتي هالوجين على نفس ذرة الكربون بتطبيق ماركونيكوف مرتين.", "tags": ["ماركونيكوف", "بروباين", "إضافة على مرحلتين"]}, {"id": "w2_q04", "workshop": 2, "number": 4, "source": "امتحانات الثانوية العامة", "topic": "الإيثيلين جلايكول والروابط الهيدروجينية", "question": "السبب العلمي الرئيسي في استخدام الإيثيلين جلايكول كمانع لتجمد الماء في مبردات السيارات بالمناطق القطبية الباردة هو:", "options": ["أ) قدرته على تكوين 4 روابط هيدروجينية مع جزيئات الماء مما يمنع تجمعها على هيئة بلورات ثلج", "ب) خفض درجة غليان الماء وسرعة تطايره داخل المحرك", "ج) زيادة التوصيل الإلكتروليتي لمحلول التبريد داخل المبرد", "د) تفاعله مع الأكسجين لمنع تأكسد المعادن الداخلية للمبرد"], "correct_answer": "أ) قدرته على تكوين 4 روابط هيدروجينية مع جزيئات الماء مما يمنع تجمعها على هيئة بلورات ثلج", "teacher_method": "الإيثيلين جلايكول (1،2-ثنائي هيدروكسي إيثان) كحول ثنائي الهيدروكسيل (دايول) صيغته CH2OH-CH2OH. بسبب احتوائه على مجموعتي هيدروكسيل قطبيتين، يستطيع الجزيء الواحد منه تكوين 4 روابط هيدروجينية قوية مع جزيئات الماء المحيطة به، مما يعوق حركة جزيئات الماء ويمنع تقاربها وتجمعها لتكوين الشبكة البلورية للثلج، فيخفض درجة تجمد الماء بصورة كبيرة جداً.", "trick_alert": "الروابط الهيدروجينية بين الإيثيلين جلايكول والماء ترفع من درجة غليان سائل التبريد وفي نفس الوقت تخفض بشدة من درجة تجمده.", "tags": ["إيثيلين جلايكول", "روابط هيدروجينية", "مبردات السيارات"]}, {"id": "w2_q05", "workshop": 2, "number": 5, "source": "امتحان دور أول 2021", "topic": "مخطط نزع الماء وهدرجة الألكين", "question": "من المخطط الكيميائي التالي:\nإيثانول (C2H5OH) -(H2SO4 مركز, 180°C)-> غاز (A) -(H2, Pt, حرارة)-> مركب (B)\nما هما المركبان (A) و (B)؟", "options": ["أ) (A) هو غاز الإيثين، و (B) هو غاز الإيثان", "ب) (A) هو غاز الإيثان، و (B) هو غاز الإيثين", "ج) (A) هو كبريتات إيثيل هيدروجينية، و (B) هو إيثانول", "د) (A) هو غاز الإيثاين، و (B) هو الإيثين"], "correct_answer": "أ) (A) هو غاز الإيثين، و (B) هو غاز الإيثان", "teacher_method": "تسخين الإيثانول مع حمض الكبريتيك المركز عند 180°C يمثل تفاعل نزع ماء تام، حيث ينحل وسيط كبريتات الإيثيل الهيدروجينية حرارياً ليعطي غاز الإيثين C2H4 (المركب A).\nوعند إمرار غاز الإيثين مع الهيدروجين على البلاتين المجزأ المسخن، يحدث تفاعل هدرجة (إضافة) وتنكسر الرابطة باي ليتحول إلى الألكان المشبع المقابل وهو الإيثان C2H6 (المركب B).", "trick_alert": "تذكر تأثير درجات الحرارة مع الإيثانول وحمض الكبريتيك: 80°C تعطي كبريتات إيثيل هيدروجينية، بينما 180°C تكتمل عملية النزع وينطلق الإيثين.", "tags": ["تحضير الإيثين", "نزع ماء", "هدرجة"]}, {"id": "w2_q06", "workshop": 2, "number": 6, "source": "امتحانات الثانوية العامة", "topic": "التكسير الحراري الحفزي للألكانات طويلة السلسلة", "question": "يمكن تحويل هيدروكربون البنتاديكان (C15H32) إلى وقود الأوكتان (C8H18) ذي القيمة الاقتصادية العالية من خلال عملية:", "options": ["أ) التكسير الحراري الحفزي وينتج معه ألكين هو الهبتين C7H14", "ب) البلمرة الثلاثية لإنتاج هيدروكربون أروماتي", "ج) التقطير الجاف مع الجير الصودي", "د) الهلجنة بالاستبدال في وجود الأشعة فوق البنفسجية"], "correct_answer": "أ) التكسير الحراري الحفزي وينتج معه ألكين هو الهبتين C7H14", "teacher_method": "البنتاديكان ألكان طويل السلسلة يحتوي على 15 ذرة كربون و 32 ذرة هيدروجين، واستخدامه كوقود محدود. التكسير الحراري الحفزي (بالتسخين تحت ضغط مرتفع في وجود عوامل حفازة) يكسر السلاسل الكربونية الطويلة إلى ألكان قصير السلسلة (الأوكتان C8H18 المستخدم في جازولين السيارات) وألكين قصير السلسلة.\nمعادلة اتزان الكربون: 15 - 8 = 7 ذرات كربون -> الهبتين C7H14.", "trick_alert": "نواتج التكسير الحراري الحفزي للألكان يجب أن تحتوي دائماً على ألكان مشبع واحد على الأقل وألكين غير مشبع (أو أكثر)، لتحقيق التوازن التام لذرات الهيدروجين.", "tags": ["تكسير حراري حفزي", "أوكتان", "بنتاديكان"]}, {"id": "w2_q07", "workshop": 2, "number": 7, "source": "امتحان تجريبي 2021", "topic": "الغاز المائي من الميثان واستخدامه كوقود سائل", "question": "أي التفاعلات الكيميائية التالية يؤدي إلى إنتاج خليط غازي يمكن تحويله مباشرة إلى وقود سائل؟", "options": ["أ) تسخين غاز الميثان مع بخار الماء عند 725°C في وجود عامل حفاز", "ب) تسخين غاز الميثان بمعزل عن الهواء عند 1000°C", "ج) تفاعل الإيثين مع محلول برمنجانات البوتاسيوم القلوية", "د) التقطير الإتلافي للفحم الحجري"], "correct_answer": "أ) تسخين غاز الميثان مع بخار الماء عند 725°C في وجود عامل حفاز", "teacher_method": "المعادلة المنهجية:\nCH4 + H2O -(725°C, حفاز)-> CO + 3H2\nالناتج هو الغاز المائي (خليط من غازي أول أكسيد الكربون والهيدروجين)، والذي يُستخدم كعامل مختزل في فرن مدركس لاختزال خامات الحديد، أو يحول إلى وقود هيدروكربوني سائل صناعياً باستخدام طريقة فيشر-تروبش (Fischer-Tropsch) في وجود فلز الحديد كعامل حفاز.", "trick_alert": "فرق بين تسخين الميثان عند 1000°C بمعزل عن الهواء (يعطي أسود الكربون المجزأ C + 2H2)، وبين تسخينه عند 725°C مع بخار الماء (يعطي الغاز المائي).", "tags": ["الغاز المائي", "ميثان", "فيشر تروبش"]}, {"id": "w2_q08", "workshop": 2, "number": 8, "source": "امتحان دور أول 2023", "topic": "تسمية مشتقات الإيثان الناتجة عن إضافة الهالوجين", "question": "ما التسمية النظامية بنظام الأيوباك (IUPAC) للمركب الناتج من إضافة ماء البروم الأحمر (المذاب في CCl4) إلى المركب التالي:\nC6H5-CH=CH-C6H5 ؟", "options": ["أ) 1،2-ثنائي برومو-1،2-ثنائي فينيل إيثان", "ب) 1،2-ثنائي برومو ثنائي بنزين إيثان", "ج) ثنائي برومو فاينايل", "د) 1،2-ثنائي برومو-1،2-ثنائي فينيل إيثين"], "correct_answer": "أ) 1،2-ثنائي برومو-1،2-ثنائي فينيل إيثان", "teacher_method": "1. المركب المتفاعل يحتوي على رابطة مزدوجة بين ذرتي كربون متصلتين بمجموعتي فينيل (C6H5-).\n2. عند إضافة Br2، تنكسر الرابطة المزدوجة وتدخل ذرة بروم على الكربونة 1 وذرة بروم على الكربونة 2، وتتحول الرابطة المزدوجة إلى أحادية مشبعة (إيثان).\n3. التسمية بالأسبقية الأبجدية اللاتينية: البرومو (Bromo - حرف B) يسبق الفينيل (Phenyl - حرف P)، فيكون الاسم النظامي المعتمد: 1،2-ثنائي برومو-1،2-ثنائي فينيل إيثان.", "trick_alert": "تنكسر الرابطة الثنائية تماماً بعد الإضافة ويصبح أصل المركب ألكاناً (إيثان) وليس ألكيناً، ومجموعة حلقة البنزين كفرع تسمى 'فينيل' وتكتب بعد البروم أبجدياً.", "tags": ["تسمية IUPAC", "ماء البروم", "فينيل"]}, {"id": "w2_q09", "workshop": 2, "number": 9, "source": "أسئلة الامتحانات والسنتر", "topic": "التمييز المخبري واختبار عدم التشبع بماء البروم", "question": "للتمييز عملياً في المختبر بين غاز الإيثان وغاز الإيثين، يستخدم ماء البروم الأحمر المذاب في رابع كلوريد الكربون (CCl4). ما التغير اللوني ونوع المركب المتكون مع الإيثين؟", "options": ["أ) يزول اللون الأحمر لتكون مركب 1،2-ثنائي برومو إيثان عديم اللون", "ب) يظل اللون الأحمر ثابتاً لتكون مركب برومو إيثان", "ج) يتكون راسب أبيض من بروميد الفضة", "د) يتصاعد غاز بروميد الهيدروجين ذو الرائحة النفاذة"], "correct_answer": "أ) يزول اللون الأحمر لتكون مركب 1،2-ثنائي برومو إيثان عديم اللون", "teacher_method": "الإيثين يحتوي على رابطة مزدوجة وبها رابطة باي ضعيفة سهلة الكسر. عند إمرار الإيثين في ماء البروم الأحمر المذاب في CCl4، يتفاعل بالإضافة السريعة كاسراً الرابطة باي، ويدخل البروم ليتكون 1،2-ثنائي برومو إيثان وهو سائل عديم اللون، فيزول اللون الأحمر دلالة على وجود الرابطة المزدوجة. أما الإيثان فلا يتفاعل في الظلام ويظل اللون الأحمر كما هو.", "trick_alert": "زوال لون ماء البروم الأحمر في CCl4 هو أحد الاختبارين المعتمدين للكشف عن عدم التشبع في الألكينات والألكاينات (إلى جانب اختبار تفاعل باير).", "tags": ["ماء البروم", "اختبار عدم التشبع", "تمييز عملي"]}, {"id": "w2_q10", "workshop": 2, "number": 10, "source": "امتحان تجريبي 2021", "topic": "تفاعلات الإضافة والاستبدال المتتابعة على الإيثين", "question": "عند تفاعل 1 مول من غاز الإيثين (C2H4) مع وفرة من غاز الكلور في الظروف المناسبة للحصول على مركب هالوجيني مشبع لا يحتوي على أي ذرة هيدروجين، فإن إجمالي عدد مولات الكلور (Cl2) المستهلكة يساوي:", "options": ["أ) 5 مول من غاز الكلور Cl2", "ب) 4 مول من غاز الكلور Cl2", "ج) 6 مول من غاز الكلور Cl2", "د) 2 مول من غاز الكلور Cl2"], "correct_answer": "أ) 5 مول من غاز الكلور Cl2", "teacher_method": "التفاعل يتم على مرحلتين نوعيتين مختلفتين:\n1. مرحلة الإضافة: يتفاعل الإيثين C2H4 مع 1 مول من غاز Cl2 لكسر الرابطة المزدوجة وإنتاج 1،2-ثنائي كلورو إيثان (C2H4Cl2). المركب الناتج ما زال يحتوي على 4 ذرات هيدروجين.\n2. مرحلة الاستبدال (الإحلال في وجود UV): لتحويله إلى مركب خالٍ تماماً من الهيدروجين (سداسي كلورو إيثان C2Cl6)، يلزم استبدال ذرات الهيدروجين الأربع بالكلور، وكل ذرة هيدروجين تتطلب 1 مول Cl2، أي يلزم 4 مول من Cl2 بالاستبدال.\nإجمالي مولات الكلور = 1 مول (إضافة) + 4 مول (استبدال) = 5 مول من Cl2.", "trick_alert": "فخ الامتحان الشهير: ينسى بعض الطلاب مول الإضافة الأول ويحسبون 4 مول فقط، أو يعاملون كل ذرات الكلور كإضافة فيخطئون؛ الحل الصحيح هو جمع الإضافة مع الاستبدال (1 + 4 = 5).", "tags": ["إضافة واستبدال", "إيثين", "سداسي كلورو إيثان"]}, {"id": "w2_q11", "workshop": 2, "number": 11, "source": "امتحانات الثانوية العامة", "topic": "المعادلة العامة لاحتراق الألكينات", "question": "عند الاحتراق التام لمول واحد من ألكين غير متفرع صيغته العامة CnH2n في وفرة من الأكسجين، فإن النسبة بين عدد مولات O2 المستهلكة إلى عدد مولات CO2 الناتجة تساوي:", "options": ["أ) 1.5 : 1 (أو 3 : 2)", "ب) 1 : 1", "ج) 2 : 1", "د) 3 : 1"], "correct_answer": "أ) 1.5 : 1 (أو 3 : 2)", "teacher_method": "معادلة احتراق الألكين الموزونة:\nCnH2n + (3n/2) O2 -> n CO2 + n H2O\nعدد مولات O2 المستهلكة = 1.5n (أو 3n/2).\nعدد مولات CO2 الناتجة = n.\nالنسبة بينهما = (1.5n) / n = 1.5 إلى 1، أي بنسبة 3 إلى 2.", "trick_alert": "الألكين هو الهيدروكربون الوحيد الذي ينتج عن احتراقه عدد متساوٍ تماماً من مولات غاز ثنائي أكسيد الكربون وبخار الماء (n مول CO2 مقابل n مول H2O).", "tags": ["احتراق", "ألكينات", "نسب كمية"]}, {"id": "w2_q12", "workshop": 2, "number": 12, "source": "امتحانات الثانوية العامة", "topic": "الفرق بين تفاعل باير والأكسدة بفوق أكسيد الهيدروجين", "question": "عند تفاعل غاز البروبين مع محلول فوق أكسيد الهيدروجين (H2O2)، فإن ناتج التفاعل وتوصيفه العلمي هما:", "options": ["أ) 1،2-ثنائي هيدروكسي بروبان (بروبيلين جلايكول)، ويعتبر تفاعل أكسدة وإضافة ولا يسمى تفاعل باير", "ب) حمض البروبانويك، ويعتبر تفاعل باير", "ج) كحول بروبيلي أولي، ويعتبر تفاعل استبدال", "د) بوليمر ثلاثي غير قابل للذوبان"], "correct_answer": "أ) 1،2-ثنائي هيدروكسي بروبان (بروبيلين جلايكول)، ويعتبر تفاعل أكسدة وإضافة ولا يسمى تفاعل باير", "teacher_method": "فوق أكسيد الهيدروجين H2O2 عامل مؤكسد يكسر الرابطة المزدوجة في البروبين ويضيف مجموعتي هيدروكسيل (-OH) على كربونتي الرابطة، فينتج بروبيلين جلايكول (1،2-ثنائي هيدروكسي بروبان وهو دايول).\nالتوصيف المنهجي الدقيق: هذا التفاعل يُعد تفاعل أكسدة وتفاعل إضافة، ولكنه لا يعد تفاعل باير، لأن تفاعل باير مشروط باستخدام محلول برمنجانات البوتاسيوم في وسط قلوي حصراً.", "trick_alert": "قاعدة ذهبية: كل تفاعل باير هو تفاعل أكسدة وإضافة، ولكن ليس كل تفاعل أكسدة وإضافة للألكين يعتبر تفاعل باير.", "tags": ["أكسدة وإضافة", "H2O2", "بروبيلين جلايكول", "باير"]}, {"id": "w2_q13", "workshop": 2, "number": 13, "source": "امتحان دور أول 2022", "topic": "بلمرة البروبين بالإضافة واستنتاج الوحدة المتكررة", "question": "البوليمر الناتج من البلمرة بالإضافة لمركب البروبين (CH2=CH-CH3)، يعبر عن تركيب وحدته المتكررة بالصيغة:", "options": ["أ) -[-CH2-CH(CH3)-]n- (بولي بروبيلين PP)", "ب) -[-CH2-CH2-CH2-]n-", "ج) -[-CH(CH3)-CH(CH3)-]n-", "د) -[-C(CH3)2-CH2-]n-"], "correct_answer": "أ) -[-CH2-CH(CH3)-]n- (بولي بروبيلين PP)", "teacher_method": "قاعدة رسم البوليمر المعتمدة:\nفي بلمرة الإضافة، تنكسر الرابطة باي بين ذرتي كربون الرابطة المزدوجة الأصلية في المونومر، وتتحرران لتكوين روابط أحادية تصل بين الجزيئات المجاورة، وتكون هاتان الذرتان هما الهيكل الأفقي لسلسلة البوليمر.\nمجموعة الميثيل (-CH3) المرتبطة بالكربونة الثانية تظل متصلة بها كتفرع عمودي (رأسي)، لتكون الوحدة المتكررة هي: -[-CH2-CH(CH3)-]n- وهو البولي بروبيلين المستخدم في صناعة السجاد والمفارش والشكائر البلاستيكية.", "trick_alert": "احذر الاختيار (ب) الذي يفرد ذرات الكربون الثلاث في خط مستقيم واحد؛ ذرات الكربون الزائدة عن الرابطة المزدوجة تخرج تفرعات ولا تدخل في العمود الفقري للبوليمر.", "tags": ["بلمرة بالإضافة", "بولي بروبيلين", "الوحدة المتكررة"]}, {"id": "w2_q14", "workshop": 2, "number": 14, "source": "امتحانات الثانوية العامة", "topic": "إضافة HBr إلى مشتقات الفاينيل المهلجنة", "question": "عند إضافة 1 مول من بروميد الهيدروجين (HBr) إلى مركب بروميد الفاينيل (CH2=CH-Br)، يتكون مركب:", "options": ["أ) 1،1-ثنائي برومو إيثان", "ب) 1،2-ثنائي برومو إيثان", "ج) 1،2-ثنائي برومو إيثين", "د) برومو إيثان"], "correct_answer": "أ) 1،1-ثنائي برومو إيثان", "teacher_method": "بروميد الفاينيل ألكين غير متماثل: ترتبط ذرة الكربون الأولى (CH2) بذرتي هيدروجين، بينما ترتبط ذرة الكربون الثانية (CH) بذرة هيدروجين واحدة وذرة بروم.\nعند إضافة HBr، تنكسر الرابطة المزدوجة وتطبق قاعدة ماركونيكوف إجبارياً:\n• يضاف الهيدروجين (H+) إلى ذرة الكربون الطرفية الأكثر هيدروجيناً (CH2 لتصبح CH3).\n• يضاف أيون البروميد (Br-) إلى ذرة الكربون الأقل هيدروجيناً والتي تحمل ذرة البروم أصلاً، فيتجمع البرومان على نفس ذرة الكربون رقم 1 وينتج: 1،1-ثنائي برومو إيثان (CH3-CHBr2).", "trick_alert": "ماركونيكوف تجبر الهالوجين الثاني على الدخول لنفس ذرة الكربون الحاملة للهالوجين الأول، منتجة مشتق ثنائي الهالوجين على نفس الكربونة وليس على كربونتين متجاورتين.", "tags": ["ماركونيكوف", "بروميد الفاينيل", "ثنائي برومو إيثان"]}, {"id": "w2_q15", "workshop": 2, "number": 15, "source": "امتحان دور أول 2023", "topic": "العلاقة بين إلكترونات باي ومولات الهيدروجين للتشبع", "question": "أجريت هدرجة تامة لمول واحد من هيدروكربون غير مشبع يحتوي جزيئه على 6 إلكترونات من النوع باي (π). ما عدد مولات غاز الهيدروجين (H2) اللازمة لتحويله إلى مركب مشبع تماماً؟", "options": ["أ) 3 مول من غاز H2", "ب) 6 مول من غاز H2", "ج) 2 مول من غاز H2", "د) 12 مول من غاز H2"], "correct_answer": "أ) 3 مول من غاز H2", "teacher_method": "القاعدة الفيزيائية والكيميائية:\nكل رابطة تساهمية (سواء كانت سيجما أو باي) تتكون من زوج من الإلكترونات (2 إلكترون).\nإذا كان الجزيء يحتوي على 6 إلكترونات باي، فإن عدد روابط باي فيه يساوي:\nعدد روابط باي = 6 / 2 = 3 روابط باي (π).\nولما كانت كل رابطة باي واحدة تحتاج إلى مول واحد من جزيئات غاز الهيدروجين (H2) لكسرها وتسكين ذرتي هيدروجين بدلاً منها، فإن المركب يحتاج إلى 3 مول من غاز H2 (أو 6 مول من ذرات الهيدروجين).", "trick_alert": "اقرأ رأس السؤال بتركيز: هل طلب 'عدد مولات غاز الهيدروجين' أي H2 (وهي 3 مول)، أم 'عدد مولات ذرات الهيدروجين' أي ذرات H المفردة (وهي 6 مول).", "tags": ["إلكترونات باي", "هدرجة تامة", "حساب كيميائي"]}, {"id": "w2_q16", "workshop": 2, "number": 16, "source": "امتحانات الثانوية العامة", "topic": "الهيدرة الحفزية للإيثاين والوسيط غير المستقر", "question": "المركب غير المشبع غير المستقر الذي يتكون كمركب وسطي لحظي أثناء الهيدرة الحفزية لغاز الإيثاين (في وجود H2SO4 بتركيز 40% و HgSO4 عند 60°C) هو:", "options": ["أ) كحول الفاينيل (CH2=CH-OH)", "ب) الأسيتالدهيد (الإيثانال CH3CHO)", "ج) حمض الأسيتيك (حمض الإيثانويك)", "د) كحول الإيثانول"], "correct_answer": "أ) كحول الفاينيل (CH2=CH-OH)", "teacher_method": "معادلة الهيدرة الحفزية للإيثاين:\nHC≡CH + H2O -(H2SO4 40%, HgSO4 60°C)-> [CH2=CH-OH] غير ثابت -> CH3CHO (أسيتالدهيد)\nعند إضافة الماء إلى الرابطة الثلاثية في الإيثاين، تنكسر رابطة باي واحدة وتضاف H إلى طرف و OH إلى الطرف الآخر، ليتكون مركب كحول الفاينيل. هذا المركب غير ثابت وغير مستقر كيميائياً نظراً لوجود مجموعة هيدروكسيل على ذرة كربون غير مشبعة (مرتبطة برابطة مزدوجة)، فيحدث إعادة ترتيب داخلية سريعة لذراته لتنتقل ذرة الهيدروجين وتتكون مجموعة الكربونيل المزدوجة C=O، مستقراً في صورة أسيتالدهيد (إيثانال).", "trick_alert": "كحول الفاينيل مركب وسطي غير ثابت، بينما الأسيتالدهيد هو المركب النهائي المستقر، وأكسدته تعطي حمض أسيتيك، واختزاله يعطي إيثانول.", "tags": ["هيدرة حفزية", "كحول الفاينيل", "إيثاين", "أسيتالدهيد"]}];
+        const flashcardsDb = [{"front": "ما هو القانون السريع لحساب عدد ذرات الكربون (n) لألكان كتلته المولية M؟", "back": "n = (M - 2) / 14\nاطرح 2 من الكتلة المولية ثم اقسم على 14 لتحصل على عدد ذرات الكربون مباشرة."}, {"front": "ما هي شروط تطبيق قاعدة ماركونيكوف؟", "back": "1. كاشف غير متماثل (مثل HBr أو H2O)\n2. ألكين أو ألكاين غير متماثل\nالقاعدة: يضاف الهيدروجين إلى ذرة الكربون غير المشبعة الحاملة لعدد أكبر من ذرات الهيدروجين، ويضاف الشق السالب إلى ذرة الكربون الحاملة لعدد أقل من الهيدروجين."}, {"front": "متى لا تطبق قاعدة ماركونيكوف إطلاقاً؟", "back": "1. عند إضافة كاشف متماثل (مثل Br2 أو Cl2 أو H2) حتى لو كان الألكين غير متماثل.\n2. عند إضافة أي كاشف إلى ألكين متماثل (مثل 2-بيوتين أو الإيثين)."}, {"front": "إذا احتوى المركب على رابطة ثلاثية ورابطة ثنائية معاً، لمن تكون الأولوية عند الهدرجة؟", "back": "الأولوية للرابطة الثلاثية أولاً:\nتستهلك 2 مول من غاز الهيدروجين H2 لتتشبع وتتحول إلى رابطة أحادية، ثم بعد ذلك تتفاعل الرابطة الثنائية مع المتفاعلات المتبقية."}, {"front": "ما هو القانون السريع لحساب روابط سيجما (σ) في أي هيدروكربون أليفاتي مفتوح السلسلة؟", "back": "مجموع ذرات (الكربون + الهيدروجين) - 1\nوفي الألكان فقط: 3n + 1\nوبين ذرات الكربون فقط في السلسلة المفتوحة: n - 1."}, {"front": "ما هو ناتج التقطير الجاف لهيكسانوات الصوديوم مع الجير الصودي؟ وكم عدد أيزوميراته؟", "back": "ينتج البنتان C5H12 (ينقص ذرة كربون واحدة عن الملح العضوي المستخدم).\nعدد أيزوميرات البنتان = 3 أيزوميرات (بنتان عادي، 2-ميثيل بيوتان، 2،2-ثنائي ميثيل بروبان)."}, {"front": "ما الفرق الدقيق بين تفاعل باير وأكسدة الألكين بفوق أكسيد الهيدروجين (H2O2)؟", "back": "كلاهما تفاعل أكسدة وإضافة ينتج عنه مركب ثنائي الهيدروكسيل (دايول).\nلكن تفاعل باير يشترط حصراً استخدام محلول برمنجانات البوتاسيوم في وسط قلوي، ويتميز بزوال اللون البنفسجي كاختبار للكشف عن الرابطة المزدوجة."}, {"front": "لماذا يستخدم الإيثيلين جلايكول كمانع لتجمد الماء في مبردات السيارات؟", "back": "لأنه يحتوي على مجموعتي هيدروكسيل (-OH) ويكون 4 روابط هيدروجينية مع جزيئات الماء، مما يمنع تجمع جزيئات الماء معاً على هيئة بلورات ثلج."}, {"front": "ما هي شروط ودرجات حرارة تفاعل نزع الماء من الإيثانول بواسطة حمض الكبريتيك المركز؟", "back": "• عند 80 درجة مئوية: يتكون كبريتات إيثيل هيدروجينية وماء.\n• عند 180 درجة مئوية: يحدث انحلال حراري لكبريتات الإيثيل الهيدروجينية وينتج غاز الإيثين C2H4 ويعاد إنتاج حمض الكبريتيك."}, {"front": "إذا كان مركب هيدروكربوني يحتوي على 6 إلكترونات باي (π)، فكم مول من غاز H2 يلزم لتشبعه التام؟", "back": "3 مول من جزيئات غاز H2 (أو 6 مول من ذرات الهيدروجين).\nلأن كل رابطة باي تتكون من زوج إلكترونات (2 إلكترون باي): 6 / 2 = 3 روابط باي."}, {"front": "ما هو المركب غير المشبع غير الثابت الناتج من الهيدرة الحفزية للإيثاين؟ وإلى ماذا يتحول؟", "back": "ينتج كحول الفاينيل CH2=CH-OH (مركب غير ثابت).\nيعيد ترتيب ذراته سريعاً ليتحول إلى مركب الأسيتالدهيد المستقر (الإيثانال CH3CHO)."}, {"front": "كيف ترسم مقطع البوليمر بالإضافة لأي مونومر بخطوة واحدة؟", "back": "اكسر الرابطة الثنائية، واجعل كربونتي الرابطة على المحور الأفقي، وانقل جميع التفرعات الأخرى رأسياً (أعلى وأسفل)، وافتح رابطتي اتصال جانبيتين وضع القوسين مع رمز n."}];
+
+        let allQuestions = [...w1Db, ...w2Db];
+        let activeTab = 'all-q';
+        let activeFilter = 'all';
+        let searchKeyword = '';
+        let practiceMode = false;
+        let cardIndex = 0;
+
+        document.getElementById('totalCountBadge').innerText = allQuestions.length;
+        document.getElementById('statQuestionsDisplay').innerText = allQuestions.length + '+';
+
+        // Render Questions
+        function renderQuestionsList() {
+            const container = document.getElementById('questionsView');
+            container.innerHTML = '';
+
+            let list = allQuestions;
+            if (activeTab === 'w1-q') {
+                list = w1Db;
+            } else if (activeTab === 'w2-q') {
+                list = w2Db;
+            }
+
+            if (activeFilter !== 'all') {
+                list = list.filter(q => 
+                    q.topic.includes(activeFilter) ||
+                    q.tags.some(t => t.includes(activeFilter)) ||
+                    q.question.includes(activeFilter)
+                );
+            }
+
+            if (searchKeyword.trim() !== '') {
+                const term = searchKeyword.toLowerCase();
+                list = list.filter(q => 
+                    q.question.toLowerCase().includes(term) ||
+                    q.teacher_method.toLowerCase().includes(term) ||
+                    q.trick_alert.toLowerCase().includes(term) ||
+                    q.topic.toLowerCase().includes(term)
+                );
+            }
+
+            document.getElementById('matchedQuestionsCount').innerText = `عدد الأسئلة المعروضة: ${list.length}`;
+
+            if (list.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
+                        <svg class="icon-svg" width="48" height="48" viewBox="0 0 24 24" style="margin-bottom: 12px; stroke: var(--text-muted);">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 4px;">لم يتم العثور على نتائج</h3>
+                        <p style="font-size: 0.85rem;">جرب كتابة مصطلح آخر مثل: ألكان، بروم، أو ماركونيكوف</p>
+                    </div>
+                `;
+                return;
+            }
+
+            list.forEach(q => {
+                const card = document.createElement('div');
+                card.className = 'q-card';
+                card.id = q.id;
+
+                let optionsHtml = '';
+                q.options.forEach(opt => {
+                    const isCorrect = (opt === q.correct_answer);
+                    const optClass = (isCorrect && !practiceMode) ? 'option-box correct-selected' : 'option-box';
+                    optionsHtml += `
+                        <div class="${optClass}">
+                            <div class="option-indicator">
+                                ${isCorrect && !practiceMode ? '<svg class="icon-svg" width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>' : ''}
+                            </div>
+                            <span>${opt}</span>
+                        </div>
+                    `;
+                });
+
+                card.innerHTML = `
+                    <div class="q-header">
+                        <div class="q-meta-group">
+                            <span class="q-seq">سؤال #${q.number}</span>
+                            <span class="clean-badge ${q.workshop === 1 ? 'badge-emerald' : 'badge-cyan'}">
+                                ${q.workshop === 1 ? 'ورشة الحل الأولى (ألكانات)' : 'ورشة الحل الثانية (ألكينات وألكاينات)'}
+                            </span>
+                            <span class="clean-badge badge-amber">${q.source}</span>
+                            <span class="clean-badge badge-indigo">${q.topic}</span>
+                        </div>
+                    </div>
+
+                    <div class="q-body">${q.question.replace(/\n/g, '<br>')}</div>
+                    <div class="options-container">${optionsHtml}</div>
+
+                    <div class="solution-container" style="${practiceMode ? 'display: none;' : ''}">
+                        <div class="teacher-callout">
+                            <div class="callout-header">
+                                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                                طريقة وتفكير الأستاذ في الحل السريع:
+                            </div>
+                            <div class="callout-body">${q.teacher_method}</div>
+                        </div>
+
+                        <div class="trick-callout">
+                            <div class="trick-callout-header">
+                                <svg class="icon-svg" width="15" height="15" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                فخ الامتحان والتريكة الذهبية:
+                            </div>
+                            <div class="trick-callout-body">${q.trick_alert}</div>
+                        </div>
+                    </div>
+
+                    <div class="q-footer">
+                        ${practiceMode ? `
+                            <button class="btn-action-sm toggle-ans-btn">
+                                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                كشف الإجابة والشرح
+                            </button>
+                        ` : ''}
+                        <button class="btn-action-sm copy-q-btn">
+                            <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            نسخ السؤال والحل
+                        </button>
+                    </div>
+                `;
+
+                if (practiceMode) {
+                    const toggleBtn = card.querySelector('.toggle-ans-btn');
+                    const solDiv = card.querySelector('.solution-container');
+                    toggleBtn.addEventListener('click', () => {
+                        if (solDiv.style.display === 'none') {
+                            solDiv.style.display = 'block';
+                            toggleBtn.innerHTML = `
+                                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                                إخفاء الإجابة
+                            `;
+                            card.querySelectorAll('.option-box').forEach(el => {
+                                if (el.innerText.includes(q.correct_answer)) {
+                                    el.className = 'option-box correct-selected';
+                                    el.querySelector('.option-indicator').innerHTML = '<svg class="icon-svg" width="12" height="12" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+                                }
+                            });
+                        } else {
+                            solDiv.style.display = 'none';
+                            toggleBtn.innerHTML = `
+                                <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                كشف الإجابة والشرح
+                            `;
+                        }
+                    });
+                }
+
+                const copyBtn = card.querySelector('.copy-q-btn');
+                copyBtn.addEventListener('click', () => {
+                    const payload = `سؤال #${q.number} (${q.source}) - ${q.topic}:\n${q.question}\n\nالإجابة الصحيحة:\n${q.correct_answer}\n\nطريقة الأستاذ في الحل:\n${q.teacher_method}\n\nالتريكة:\n${q.trick_alert}`;
+                    navigator.clipboard.writeText(payload).then(() => {
+                        copyBtn.innerHTML = '<svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> تم النسخ';
+                        setTimeout(() => {
+                            copyBtn.innerHTML = '<svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> نسخ السؤال والحل';
+                        }, 2000);
+                    });
+                });
+
+                container.appendChild(card);
+            });
+        }
+
+        // Render Rules
+        function renderRulesList() {
+            const container = document.getElementById('rulesView');
+            container.innerHTML = '';
+            rulesDb.forEach(r => {
+                const el = document.createElement('div');
+                el.className = 'rule-item-card';
+                el.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span class="clean-badge badge-cyan">${r.category}</span>
+                        <span style="font-weight: 700; color: var(--accent-cyan); font-size: 0.85rem;">قاعدة #${r.id}</span>
+                    </div>
+                    <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);">${r.title}</h3>
+                    <div class="rule-code-box">${r.law}</div>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">${r.desc.replace(/\n/g, '<br>')}</p>
+                    <div style="background: rgba(16, 185, 129, 0.08); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; border-right: 3px solid var(--accent-emerald);">
+                        <strong>مثال تطبيقي:</strong> ${r.example}
+                    </div>
+                    <div style="font-size: 0.84rem; color: var(--accent-amber); font-weight: 600;">
+                        توجيه الأستاذ: "${r.quote}"
+                    </div>
+                `;
+                container.appendChild(el);
+            });
+        }
+
+        // Flashcards Logic
+        function updateCardDisplay() {
+            const item = flashcardsDb[cardIndex];
+            document.getElementById('fcQuestion').innerText = item.front;
+            document.getElementById('fcAnswer').innerText = item.back;
+            document.getElementById('fcCounter').innerText = `${cardIndex + 1} / ${flashcardsDb.length}`;
+            document.getElementById('flipCard').classList.remove('is-flipped');
+        }
+
+        document.getElementById('flipStage').addEventListener('click', () => {
+            document.getElementById('flipCard').classList.toggle('is-flipped');
+        });
+
+        document.getElementById('fcNext').addEventListener('click', (e) => {
+            e.stopPropagation();
+            cardIndex = (cardIndex < flashcardsDb.length - 1) ? cardIndex + 1 : 0;
+            updateCardDisplay();
+        });
+
+        document.getElementById('fcPrev').addEventListener('click', (e) => {
+            e.stopPropagation();
+            cardIndex = (cardIndex > 0) ? cardIndex - 1 : flashcardsDb.length - 1;
+            updateCardDisplay();
+        });
+
+        // Tabs Navigation
+        document.querySelectorAll('.tab-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-item').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeTab = btn.getAttribute('data-tab');
+
+                const qView = document.getElementById('questionsView');
+                const rView = document.getElementById('rulesView');
+                const fView = document.getElementById('flashcardsView');
+                const ctrlPanel = document.getElementById('controlsPanel');
+
+                if (activeTab === 'rules-view') {
+                    qView.style.display = 'none';
+                    rView.style.display = 'grid';
+                    fView.style.display = 'none';
+                    ctrlPanel.style.display = 'none';
+                    renderRulesList();
+                } else if (activeTab === 'flashcards-view') {
+                    qView.style.display = 'none';
+                    rView.style.display = 'none';
+                    fView.style.display = 'block';
+                    ctrlPanel.style.display = 'none';
+                    updateCardDisplay();
+                } else {
+                    qView.style.display = 'flex';
+                    rView.style.display = 'none';
+                    fView.style.display = 'none';
+                    ctrlPanel.style.display = 'flex';
+                    renderQuestionsList();
+                }
+            });
+        });
+
+        // Filters
+        document.querySelectorAll('.filter-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                activeFilter = tag.getAttribute('data-filter');
+                renderQuestionsList();
+            });
+        });
+
+        // Search Input
+        document.getElementById('filterSearchInput').addEventListener('input', (e) => {
+            searchKeyword = e.target.value;
+            renderQuestionsList();
+        });
+
+        // Test Mode Checkbox
+        document.getElementById('testModeCheckbox').addEventListener('change', (e) => {
+            practiceMode = e.target.checked;
+            renderQuestionsList();
+        });
+
+        // Theme Toggle
+        document.getElementById('themeToggleBtn').addEventListener('click', () => {
+            const current = document.body.getAttribute('data-theme');
+            const target = (current === 'dark') ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', target);
+            const icon = document.getElementById('themeIcon');
+            if (target === 'light') {
+                icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+            } else {
+                icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+            }
+        });
+
+        // Print Action
+        document.getElementById('printPageBtn').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Initial Initialization
+        renderQuestionsList();
+        renderRulesList();
+        updateCardDisplay();
+    </script>
+</body>
+</html>
