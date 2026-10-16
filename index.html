@@ -370,12 +370,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
+            gap: 12px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
             background: #f8fafc;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 20px 16px;
+            padding: 18px 16px;
+        }
+        .reaction-flow::-webkit-scrollbar {
+            height: 5px;
+        }
+        .reaction-flow::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
         }
         [data-theme="dark"] .reaction-flow {
             background: #12161d;
@@ -387,6 +397,7 @@
             align-items: center;
             text-align: center;
             gap: 6px;
+            flex-shrink: 0;
         }
 
         .chem-formula {
@@ -442,31 +453,35 @@
             font-weight: 900;
             color: var(--text-muted);
             user-select: none;
+            flex-shrink: 0;
+            padding: 0 4px;
         }
 
         .chem-arrow-box {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 4px;
-            padding: 0 10px;
+            padding: 0 8px;
+            flex-shrink: 0;
         }
 
         .arrow-condition {
             direction: rtl;
             font-size: 0.74rem;
             font-weight: 700;
-            color: #991b1b;
+            color: #0369a1;
             white-space: nowrap;
-            background: #fef2f2;
-            border: 1px solid #fecaca;
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
             padding: 2px 8px;
             border-radius: 10px;
         }
         [data-theme="dark"] .arrow-condition {
-            color: #f87171;
-            background: rgba(239, 68, 68, 0.12);
-            border-color: rgba(239, 68, 68, 0.3);
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.12);
+            border-color: rgba(56, 189, 248, 0.28);
         }
 
         .arrow-svg-line {
@@ -1239,6 +1254,58 @@
                 padding: 10px 12px;
                 font-size: 0.9rem;
             }
+
+            /* Mobile Chemical Diagrams Optimization */
+            .diagrams-gallery {
+                gap: 12px;
+                margin-bottom: 18px;
+            }
+            .diagram-card {
+                padding: 14px 12px;
+                gap: 10px;
+            }
+            .diagram-title {
+                font-size: 0.88rem;
+                line-height: 1.4;
+            }
+            .reaction-flow {
+                padding: 12px 10px;
+                gap: 8px;
+                justify-content: flex-start;
+                border-radius: var(--radius-sm);
+                -webkit-overflow-scrolling: touch;
+            }
+            .chem-formula {
+                font-size: 0.86rem;
+                padding: 5px 8px;
+                letter-spacing: 0.2px;
+            }
+            .chem-label {
+                font-size: 0.7rem;
+                max-width: 90px;
+                line-height: 1.25;
+            }
+            .chem-operator {
+                font-size: 1.15rem;
+                padding: 0 2px;
+            }
+            .chem-arrow-box {
+                padding: 0 4px;
+                gap: 3px;
+            }
+            .arrow-condition {
+                font-size: 0.68rem;
+                padding: 2px 6px;
+                white-space: nowrap;
+            }
+            .arrow-svg-line svg {
+                width: 36px;
+                height: 14px;
+            }
+            .arrow-note {
+                font-size: 0.65rem;
+                white-space: nowrap;
+            }
         }
 
         /* Print Media Styles */
@@ -1386,7 +1453,7 @@
             <!-- Diagram 1: Markovnikov -->
             <div class="diagram-card">
                 <div class="diagram-title">
-                    <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24"><path d="M10 2v7.31L4.2 18.15A2 2 0 0 0 5.89 21h12.22a2 2 0 0 0 1.69-2.85L14 9.31V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/><line x1="7" y1="14" x2="17" y2="14"/></svg>
                     آلية قاعدة ماركونيكوف (إضافة هاليد الهيدروجين إلى ألكين غير متماثل)
                 </div>
                 <div class="reaction-flow">
@@ -1419,7 +1486,7 @@
             <!-- Diagram 2: Baeyer Reaction -->
             <div class="diagram-card">
                 <div class="diagram-title">
-                    <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5V2"/><line x1="8.5" y1="2" x2="15.5" y2="2"/><line x1="9.5" y1="12" x2="14.5" y2="12"/></svg>
                     تفاعل باير (أكسدة وإضافة الإيثين وتكوين الدايول)
                 </div>
                 <div class="reaction-flow">
@@ -1452,7 +1519,7 @@
             <!-- Diagram 3: Addition Polymerization -->
             <div class="diagram-card">
                 <div class="diagram-title">
-                    <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><line x1="12" y1="9" x2="17.5" y2="6.5"/><line x1="6.5" y1="17.5" x2="12" y2="15"/></svg>
                     بلمرة البروبين بالإضافة (استنتاج ورسم مقطع البوليمر)
                 </div>
                 <div class="reaction-flow">
